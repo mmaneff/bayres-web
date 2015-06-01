@@ -1,0 +1,563 @@
+@import "compass";
+@import "compass/reset";
+
+body {
+  //  height: 2625px;
+  overflow: hidden;
+}
+
+#top {
+  height: 75px;
+  position: fixed;
+  top: 0;
+  right: 0px;
+  left: 0px;
+  z-index: 100;
+  background-color: #737373;
+  #login {
+    height: 25px;
+
+    min-width: 800px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Myriad Pro Bold Condensed', serif;
+    a {
+      color: #ffae00;
+      font-family: 'Myriad Pro Regular', serif;
+      text-decoration: none;
+    }
+  }
+  #shop {
+    height: 50px;
+    min-width: 800px;
+    background-color: #bcbcbc;
+    font-family: 'Myriad Pro Condensed', serif;
+    font-size: 16px;
+    .shop-menu {
+      display: flex;
+      span {
+//        line-height: 50px;
+//        height: 50px;
+//        margin-top: 15px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+      }
+
+      #menu-spacer{
+
+        flex: 3;
+      }
+
+      #menu-logo {
+        min-width: 362px;
+        height: 81px;
+        position: relative;
+        margin-top: 0px;
+        margin-left: 25px;
+        line-height: 60px;
+        text-align: center;
+        z-index: 101;
+        @media (max-width: 495px) {
+
+
+          margin-left: 5px !important;
+        }
+      }
+      #menu-home {
+        max-height: 50px;
+        background-color: #305139;
+        padding-left: 5px;
+        padding-right: 5px;
+        cursor: pointer;
+        flex: 1;
+        line-height: 60px;
+        text-align: center;
+      }
+      #menu-carrito {
+        max-height: 50px;
+        background-color: #D6D6D6;
+        padding-left: 5px;
+        padding-right: 5px;
+        cursor: pointer;
+        flex: 1;
+        line-height: 60px;
+        text-align: center;
+
+      }
+      #menu-account {
+        max-height: 50px;
+        background-color: #2E7445;
+        padding-left: 5px;
+        padding-right: 5px;
+        cursor: pointer;
+        flex: 1;
+        line-height: 60px;
+        text-align: center;
+        color: #ffffff;
+      }
+      #menu-checkout {
+        max-height: 50px;
+        background-color: #D6D6D6;
+        padding-left: 5px;
+        padding-right: 5px;
+        cursor: pointer;
+        flex: 1;
+        line-height: 60px;
+        text-align: center;
+
+      }
+      #menu-detalle {
+        max-height: 50px;
+        min-width: 68px;
+        background-color: #005B16;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        flex: 1;
+        color: #ffffff;
+
+        img{
+          max-width: 20px;
+        }
+
+//        #menu-detalle-bottom{
+//          background-color: #2E7445 !important;
+//          margin-left: 0px;
+//          margin-right: 0px;
+//          width: 100%;
+//        }
+
+
+        div {
+          height: 25px;
+                  ac-angular-carrito{
+
+//                    background-color: #2E7445;
+                    max-width: 25px !important;
+                    width: 25px !important;
+                    #ac-angular-carrito-snipet{
+                      max-width: 25px;
+                      div{
+                        max-width: 25px !important;
+                      }
+                    }
+                  }
+        }
+      }
+
+    }
+  }
+
+  .inner-top {
+    width: 100%;
+    max-width: 800px;
+  }
+  .outer-top {
+    width: 100%;
+    max-width: 800px;
+
+  }
+}
+
+#sucursales {
+  //  position: absolute;
+  height: 600px;
+//  overflow: hidden;
+  top: 75px;
+  right: 0px;
+  left: 0px;
+  //  z-index: 80;
+  //  background-color: goldenrod;
+
+  //  perspective: 1px;
+  //  height: 100vh;
+  //  overflow-x: hidden;
+  //  overflow-y: auto;
+
+  #sucursales-01,
+  #sucursales-02,
+  #sucursales-03,
+  #sucursales-04,
+  #sucursales-05,
+  #sucursales-06 {
+    height: 600px;
+    //    width: 100%;
+    position: absolute;
+
+    //    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+  }
+
+  #sucursales-01 {
+    background: url("../img/sucursales_01.png") 50% 50% no-repeat;
+  }
+  #sucursales-02 {
+    background: url("../img/sucursales_02.png") 50% 50% no-repeat;
+  }
+  #sucursales-03 {
+    background: url("../img/sucursales_03.png") 50% 50% no-repeat;
+  }
+  #sucursales-04 {
+    background: url("../img/sucursales_04.png") 50% 50% no-repeat;
+  }
+  #sucursales-05 {
+    background: url("../img/sucursales_05.png") 50% 50% no-repeat;
+    height: 1500px;
+  }
+  #sucursales-06 {
+    background: url("../img/sucursales_06.png") 50% 50% no-repeat;
+  }
+
+}
+
+#menu {
+  //  position: absolute;
+  height: 50px;
+  top: 675px;
+  right: 0px;
+  left: 0px;
+  background-color: khaki;
+  z-index: 80;
+  #menu-container {
+    //    position: absolute;
+    background-color: green;
+    z-index: 80;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+#tierra {
+  //  position: absolute;
+  height: 500px;
+  top: 100px;
+  right: 0px;
+  left: 0px;
+  //  z-index: 30;
+  //  pointer-events: none;
+  #tierra_09,
+  #tierra_08,
+  #tierra_07,
+  #tierra_06,
+  #tierra_05,
+  #tierra_04,
+  #tierra_03,
+  #tierra_02,
+  #tierra_01 {
+    height: 500px;
+    width: 100%;
+    position: absolute;
+  }
+
+  //  #tierra_09{background: url("../img/tierra_09.gif") 50% 0%no-repeat;}
+  //  #tierra_08{background: url("../img/tierra_08.gif") 50% 0%no-repeat;}
+  //  #tierra_07{background: url("../img/tierra_07.gif") 50% 0%no-repeat;}
+  //  #tierra_06{background: url("../img/tierra_06.gif") 50% 0%no-repeat;}
+  //  #tierra_05{background: url("../img/tierra_05.png") 50% 0%no-repeat;}
+  #tierra_04 {
+    background: url("../img/tierra_04.jpg") 50% 0% no-repeat;
+  }
+  #tierra_03 {
+    background: url("../img/tierra_03.png") 50% 50% no-repeat;
+  }
+  #tierra_02 {
+    background: url("../img/tierra_02.png") 50% 50% no-repeat;
+  }
+  #tierra_01 {
+    background: url("../img/tierra_01.png") 50% 50% no-repeat;
+  }
+
+  //  #raices{
+  //    background-color: lightsalmon;
+  //    position: absolute;
+  //    height: 100px;
+  //    top: 0px;
+  //    right: 0px;
+  //    left: 0px;
+  //
+  //  }
+  //  #tierras{
+  //    height: 400px;
+  //    background-color: wheat;
+  //    position: absolute;
+  //    top: 100px;
+  //    right: 0px;
+  //    left: 0px;
+  //
+  //  }
+}
+
+#destacados {
+  //  position: absolute;
+  height: 500px;
+  top: 100px;
+  right: 0px;
+  left: 0px;
+  z-index: 30;
+//  background-color: darkslategrey;
+  #destacados_04,
+  #destacados_03,
+  #destacados_02,
+  #destacados_01 {
+    height: 500px;
+    width: 100%;
+    //    position: absolute;
+  }
+
+  #destacados_04 {
+    background: url("../img/destacados_04.jpg") 50% 0% no-repeat;
+  }
+  #destacados_03 {
+    background: url("../img/destacados_03.png") 50% 50% no-repeat;
+  }
+  #destacados_02 {
+    background: url("../img/destacados_02.png") 50% 50% no-repeat;
+  }
+  #destacados_01 {
+    background: url("../img/destacados_01.png") 50% 50% no-repeat;
+  }
+}
+
+#caverna {
+  //  position: absolute;
+  height: 500px;
+  top: 100px;
+  right: 0px;
+  left: 0px;
+  //  z-index: 40;
+  #lava {
+    background-color: darkcyan;
+    //    position: absolute;
+    height: 400px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+
+  }
+  //  #rocas{
+  //    height: 100px;
+  //    background-color: firebrick;
+  //    position: absolute;
+  //    top: 400px;
+  //    right: 0px;
+  //    left: 0px;
+  //
+  //  }
+
+  #lava_21,
+  #lava_20,
+  #lava_19,
+  #lava_18,
+  #lava_17,
+  #lava_16,
+  #lava_15,
+  #lava_14,
+  #lava_13,
+  #lava_12,
+  #lava_11,
+  #lava_10,
+  #lava_09,
+  #lava_08,
+  #lava_07,
+  #lava_06,
+  #lava_05,
+  #lava_04,
+  #lava_03,
+  #lava_02,
+  #lava_01 {
+    height: 500px;
+    width: 100%;
+    position: absolute;
+
+  }
+
+  //  #lava_21{background: url("../img/lava_21.png") 50% 0%no-repeat;}
+  //  #lava_20{background: url("../img/lava_20.png") 50% 0%no-repeat;}
+  //  #lava_19{background: url("../img/lava_19.png") 50% 0%no-repeat;}
+  //  #lava_18{background: url("../img/lava_18.png") 50% 0%no-repeat;}
+  //  #lava_17{background: url("../img/lava_17.png") 50% 0%no-repeat;}
+  //  #lava_16{background: url("../img/lava_16.png") 50% 0%no-repeat;}
+  //  #lava_15{background: url("../img/lava_15.png") 50% 0%no-repeat;}
+  //  #lava_14{background: url("../img/lava_14.png") 50% 0%no-repeat;}
+  //  #lava_13{background: url("../img/lava_13.png") 50% 0%no-repeat;}
+  //  #lava_12{background: url("../img/lava_12.png") 50% 0%no-repeat;}
+  //  #lava_11{background: url("../img/lava_11.png") 50% 0%no-repeat;}
+  //  #lava_10{background: url("../img/lava_10.jpg") 50% 0%no-repeat;}
+  //  #lava_09{background: url("../img/lava_09.png") 50% 0%no-repeat;}
+  //  #lava_08{background: url("../img/lava_08.png") 50% 0%no-repeat;}
+  //  #lava_07{background: url("../img/lava_07.png") 50% 0%no-repeat;}
+  #lava_06 {
+    background: url("../img/lava_06.png") 50% 0% no-repeat;
+  }
+  #lava_05 {
+    background: url("../img/lava_05.png") 50% 0% no-repeat;
+  }
+  #lava_04 {
+    background: url("../img/lava_04.png") 50% 0% no-repeat;
+    height: 600px !important;
+  }
+  #lava_03 {
+    background: url("../img/lava_03.png") 50% 0% no-repeat;
+    height: 700px !important;
+  }
+  #lava_02 {
+    background: url("../img/lava_02.png") 50% 50% no-repeat;
+    height: 700px !important;
+  }
+  #lava_01 {
+    background: url("../img/lava_01.png") 50% 50% no-repeat;
+    height: 700px !important;
+//    margin-top: 25px;
+  }
+}
+
+#medios {
+  position: absolute;
+  height: 50px;
+  top: 2225px;
+  right: 0px;
+  left: 0px;
+  z-index: 50;
+  background-color: blue;
+}
+
+#footer {
+
+  position: absolute;
+  height: 450px;
+  top: 2275px;
+  right: 0px;
+  left: 0px;
+  z-index: 50;
+  background-color: #000000;
+}
+
+//
+//.pasto, .tierra, .piedras, .lava{
+//  height: 800px;
+//  width: 100%;
+//  position: absolute;
+//}
+//
+//.pasto{
+//  background-color: #444444;
+//  top: 100px;
+//}
+//
+//
+//
+//.tierra{
+//  background-color: darkgoldenrod;
+//  top: 700px;
+//
+//}
+//
+//
+//.piedras{
+//  background-color: #105cb6;
+//  top: 2000px;
+//}
+//
+//
+//.lava{
+//  background-color: indianred;
+//  top:2800px;
+//}
+//
+//.footer{
+//  background-color: rgba(0,0,0,1);
+//  top:3590px;
+//  height: 400px;
+//  width: 100%;
+//  position: absolute;
+//}
+//
+//
+//.sol, .cielo, .nube2, .nube1{
+//  top: -100px;
+//  position: absolute;
+//  height: 800px;
+//  width: 100%;
+//
+//}
+//
+//.sol{
+//  background: url("../img/sol.png") 50% 50%no-repeat;
+//}
+//
+//.cielo{
+//  background: url("../img/cielo.png") 50% 50%no-repeat;
+//}
+//
+//.nube2{
+//  background: url("../img/nube2.png") 50% 50%no-repeat;
+//}
+//
+//.nube1{
+//  background: url("../img/nube1.png") 50% 50%no-repeat;
+//}
+//
+//
+//#f-capa1,
+//#f-capa2,
+//#f-capa3,
+//#f-capa4,
+//#f-capa5,
+//#f-capa6,
+//#f-capa7,
+//#f-capa8,
+//#f-capa9
+//{
+//
+//  position: absolute;
+//  height: 800px;
+//  width: 100%;
+//}
+//
+//
+//#f-capa1{
+//  background: url("../img/lava08.png") 50% 50% no-repeat;
+//  /*-webkit-filter: blur(3px);*/
+//}
+//
+//#f-capa2{
+//  background: url("../img/lava07.png") 50% 50%no-repeat;
+//}
+//#f-capa3{
+//  background: url("../img/lava02.png") 50% 50%no-repeat;
+//}
+//#f-capa4{
+//  background: url("../img/lava03.png") 50% 50%no-repeat;
+//}
+//#f-capa5{
+//  background: url("../img/lava04.png") 50% 50%no-repeat;
+//}
+//
+//
+//#f-capa6{
+//  background: url("../img/lava05.png") 50% 50%no-repeat;
+//}
+//
+//#f-capa7{
+//  background: url("../img/lava06.png") 50% 50%no-repeat;
+//}
+//
+//
+//
+//#f-capa8{
+//  background: url("../img/lava09.png") 50% 50%no-repeat;
+//}
+//
+//
+//#f-capa9{
+//  background: url("../img/lava01.png") 50% 50%no-repeat;
+//}

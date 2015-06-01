@@ -1,0 +1,451 @@
+/* line 5, ../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../sass/style.scss */
+body {
+  overflow: hidden;
+}
+
+/* line 9, ../sass/style.scss */
+#top {
+  height: 75px;
+  position: fixed;
+  top: 0;
+  right: 0px;
+  left: 0px;
+  z-index: 100;
+  background-color: #737373;
+}
+/* line 17, ../sass/style.scss */
+#top #login {
+  height: 25px;
+  min-width: 800px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Myriad Pro Bold Condensed', serif;
+}
+/* line 25, ../sass/style.scss */
+#top #login a {
+  color: #ffae00;
+  font-family: 'Myriad Pro Regular', serif;
+  text-decoration: none;
+}
+/* line 31, ../sass/style.scss */
+#top #shop {
+  height: 50px;
+  min-width: 800px;
+  background-color: #bcbcbc;
+  font-family: 'Myriad Pro Condensed', serif;
+  font-size: 16px;
+}
+/* line 37, ../sass/style.scss */
+#top #shop .shop-menu {
+  display: flex;
+}
+/* line 39, ../sass/style.scss */
+#top #shop .shop-menu span {
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+/* line 49, ../sass/style.scss */
+#top #shop .shop-menu #menu-spacer {
+  flex: 3;
+}
+/* line 54, ../sass/style.scss */
+#top #shop .shop-menu #menu-logo {
+  min-width: 362px;
+  height: 81px;
+  position: relative;
+  margin-top: 0px;
+  margin-left: 25px;
+  line-height: 60px;
+  text-align: center;
+  z-index: 101;
+}
+@media (max-width: 495px) {
+  /* line 54, ../sass/style.scss */
+  #top #shop .shop-menu #menu-logo {
+    margin-left: 5px !important;
+  }
+}
+/* line 69, ../sass/style.scss */
+#top #shop .shop-menu #menu-home {
+  max-height: 50px;
+  background-color: #305139;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+  flex: 1;
+  line-height: 60px;
+  text-align: center;
+}
+/* line 79, ../sass/style.scss */
+#top #shop .shop-menu #menu-carrito {
+  max-height: 50px;
+  background-color: #D6D6D6;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+  flex: 1;
+  line-height: 60px;
+  text-align: center;
+}
+/* line 90, ../sass/style.scss */
+#top #shop .shop-menu #menu-account {
+  max-height: 50px;
+  background-color: #2E7445;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+  flex: 1;
+  line-height: 60px;
+  text-align: center;
+  color: #ffffff;
+}
+/* line 101, ../sass/style.scss */
+#top #shop .shop-menu #menu-checkout {
+  max-height: 50px;
+  background-color: #D6D6D6;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+  flex: 1;
+  line-height: 60px;
+  text-align: center;
+}
+/* line 112, ../sass/style.scss */
+#top #shop .shop-menu #menu-detalle {
+  max-height: 50px;
+  min-width: 68px;
+  background-color: #005B16;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  flex: 1;
+  color: #ffffff;
+}
+/* line 124, ../sass/style.scss */
+#top #shop .shop-menu #menu-detalle img {
+  max-width: 20px;
+}
+/* line 136, ../sass/style.scss */
+#top #shop .shop-menu #menu-detalle div {
+  height: 25px;
+}
+/* line 138, ../sass/style.scss */
+#top #shop .shop-menu #menu-detalle div ac-angular-carrito {
+  max-width: 25px !important;
+  width: 25px !important;
+}
+/* line 143, ../sass/style.scss */
+#top #shop .shop-menu #menu-detalle div ac-angular-carrito #ac-angular-carrito-snipet {
+  max-width: 25px;
+}
+/* line 145, ../sass/style.scss */
+#top #shop .shop-menu #menu-detalle div ac-angular-carrito #ac-angular-carrito-snipet div {
+  max-width: 25px !important;
+}
+/* line 156, ../sass/style.scss */
+#top .inner-top {
+  width: 100%;
+  max-width: 800px;
+}
+/* line 160, ../sass/style.scss */
+#top .outer-top {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* line 167, ../sass/style.scss */
+#sucursales {
+  height: 600px;
+  top: 75px;
+  right: 0px;
+  left: 0px;
+}
+/* line 182, ../sass/style.scss */
+#sucursales #sucursales-01,
+#sucursales #sucursales-02,
+#sucursales #sucursales-03,
+#sucursales #sucursales-04,
+#sucursales #sucursales-05,
+#sucursales #sucursales-06 {
+  height: 600px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/* line 200, ../sass/style.scss */
+#sucursales #sucursales-01 {
+  background: url("../img/sucursales_01.png") 50% 50% no-repeat;
+}
+/* line 203, ../sass/style.scss */
+#sucursales #sucursales-02 {
+  background: url("../img/sucursales_02.png") 50% 50% no-repeat;
+}
+/* line 206, ../sass/style.scss */
+#sucursales #sucursales-03 {
+  background: url("../img/sucursales_03.png") 50% 50% no-repeat;
+}
+/* line 209, ../sass/style.scss */
+#sucursales #sucursales-04 {
+  background: url("../img/sucursales_04.png") 50% 50% no-repeat;
+}
+/* line 212, ../sass/style.scss */
+#sucursales #sucursales-05 {
+  background: url("../img/sucursales_05.png") 50% 50% no-repeat;
+  height: 1500px;
+}
+/* line 216, ../sass/style.scss */
+#sucursales #sucursales-06 {
+  background: url("../img/sucursales_06.png") 50% 50% no-repeat;
+}
+
+/* line 222, ../sass/style.scss */
+#menu {
+  height: 50px;
+  top: 675px;
+  right: 0px;
+  left: 0px;
+  background-color: khaki;
+  z-index: 80;
+}
+/* line 230, ../sass/style.scss */
+#menu #menu-container {
+  background-color: green;
+  z-index: 80;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 239, ../sass/style.scss */
+#tierra {
+  height: 500px;
+  top: 100px;
+  right: 0px;
+  left: 0px;
+}
+/* line 247, ../sass/style.scss */
+#tierra #tierra_09,
+#tierra #tierra_08,
+#tierra #tierra_07,
+#tierra #tierra_06,
+#tierra #tierra_05,
+#tierra #tierra_04,
+#tierra #tierra_03,
+#tierra #tierra_02,
+#tierra #tierra_01 {
+  height: 500px;
+  width: 100%;
+  position: absolute;
+}
+/* line 266, ../sass/style.scss */
+#tierra #tierra_04 {
+  background: url("../img/tierra_04.jpg") 50% 0% no-repeat;
+}
+/* line 269, ../sass/style.scss */
+#tierra #tierra_03 {
+  background: url("../img/tierra_03.png") 50% 50% no-repeat;
+}
+/* line 272, ../sass/style.scss */
+#tierra #tierra_02 {
+  background: url("../img/tierra_02.png") 50% 50% no-repeat;
+}
+/* line 275, ../sass/style.scss */
+#tierra #tierra_01 {
+  background: url("../img/tierra_01.png") 50% 50% no-repeat;
+}
+
+/* line 299, ../sass/style.scss */
+#destacados {
+  height: 500px;
+  top: 100px;
+  right: 0px;
+  left: 0px;
+  z-index: 30;
+}
+/* line 307, ../sass/style.scss */
+#destacados #destacados_04,
+#destacados #destacados_03,
+#destacados #destacados_02,
+#destacados #destacados_01 {
+  height: 500px;
+  width: 100%;
+}
+/* line 316, ../sass/style.scss */
+#destacados #destacados_04 {
+  background: url("../img/destacados_04.jpg") 50% 0% no-repeat;
+}
+/* line 319, ../sass/style.scss */
+#destacados #destacados_03 {
+  background: url("../img/destacados_03.png") 50% 50% no-repeat;
+}
+/* line 322, ../sass/style.scss */
+#destacados #destacados_02 {
+  background: url("../img/destacados_02.png") 50% 50% no-repeat;
+}
+/* line 325, ../sass/style.scss */
+#destacados #destacados_01 {
+  background: url("../img/destacados_01.png") 50% 50% no-repeat;
+}
+
+/* line 330, ../sass/style.scss */
+#caverna {
+  height: 500px;
+  top: 100px;
+  right: 0px;
+  left: 0px;
+}
+/* line 337, ../sass/style.scss */
+#caverna #lava {
+  background-color: darkcyan;
+  height: 400px;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+}
+/* line 356, ../sass/style.scss */
+#caverna #lava_21,
+#caverna #lava_20,
+#caverna #lava_19,
+#caverna #lava_18,
+#caverna #lava_17,
+#caverna #lava_16,
+#caverna #lava_15,
+#caverna #lava_14,
+#caverna #lava_13,
+#caverna #lava_12,
+#caverna #lava_11,
+#caverna #lava_10,
+#caverna #lava_09,
+#caverna #lava_08,
+#caverna #lava_07,
+#caverna #lava_06,
+#caverna #lava_05,
+#caverna #lava_04,
+#caverna #lava_03,
+#caverna #lava_02,
+#caverna #lava_01 {
+  height: 500px;
+  width: 100%;
+  position: absolute;
+}
+/* line 398, ../sass/style.scss */
+#caverna #lava_06 {
+  background: url("../img/lava_06.png") 50% 0% no-repeat;
+}
+/* line 401, ../sass/style.scss */
+#caverna #lava_05 {
+  background: url("../img/lava_05.png") 50% 0% no-repeat;
+}
+/* line 404, ../sass/style.scss */
+#caverna #lava_04 {
+  background: url("../img/lava_04.png") 50% 0% no-repeat;
+  height: 600px !important;
+}
+/* line 408, ../sass/style.scss */
+#caverna #lava_03 {
+  background: url("../img/lava_03.png") 50% 0% no-repeat;
+  height: 700px !important;
+}
+/* line 412, ../sass/style.scss */
+#caverna #lava_02 {
+  background: url("../img/lava_02.png") 50% 50% no-repeat;
+  height: 700px !important;
+}
+/* line 416, ../sass/style.scss */
+#caverna #lava_01 {
+  background: url("../img/lava_01.png") 50% 50% no-repeat;
+  height: 700px !important;
+}
+
+/* line 423, ../sass/style.scss */
+#medios {
+  position: absolute;
+  height: 50px;
+  top: 2225px;
+  right: 0px;
+  left: 0px;
+  z-index: 50;
+  background-color: blue;
+}
+
+/* line 433, ../sass/style.scss */
+#footer {
+  position: absolute;
+  height: 450px;
+  top: 2275px;
+  right: 0px;
+  left: 0px;
+  z-index: 50;
+  background-color: #000000;
+}

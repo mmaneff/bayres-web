@@ -1,0 +1,56 @@
+/* line 1, ../sass/parallax.scss */
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  perspective-origin-x: 100%;
+}
+
+/* line 11, ../sass/parallax.scss */
+.parallax__group {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 24, ../sass/parallax.scss */
+.parallax__layer {
+  transform-origin-x: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 33, ../sass/parallax.scss */
+.parallax__layer--fore {
+  -webkit-transform: translateZ(90px) scale(0.7);
+  transform: translateZ(90px) scale(0.7);
+}
+
+/* line 39, ../sass/parallax.scss */
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* line 45, ../sass/parallax.scss */
+.parallax__layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+}
+
+/* line 51, ../sass/parallax.scss */
+.parallax__layer--deep {
+  -webkit-transform: translateZ(-600px) scale(3);
+  transform: translateZ(-600px) scale(3);
+}
+
+/* line 57, ../sass/parallax.scss */
+.parallax__layer--deeper {
+  -webkit-transform: translateZ(-900px) scale(4);
+  transform: translateZ(-900px) scale(4);
+}
