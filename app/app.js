@@ -290,34 +290,35 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         document.getElementById("parallax").scrollTop = 636;
         LoginService.create(vm.nombre, vm.apellido, vm.mail, vm.password, vm.fecha_nacimiento,
             vm.telefono, vm.direccion, function (data) {
-                //console.log(data);
                 if (data == 'true') {
                     vm.active_form = 'main';
+                    vm.nombre = '';
+                    vm.apellido = '';
+                    vm.mail = '';
+                    vm.password = '';
+                    vm.fecha_nacimiento = '';
+                    vm.telefono = '';
+                    vm.direccion = '';
+                    vm.mail_repeat = '';
                 }
-                //if(data[0].nombre !== undefined){
-                //    vm.active_form = 'carrito';
-                //    vm.nombre = data[0].nombre;
-                //    vm.user_is_logged = true;
-                //}else{
-                //    vm.usuario_creado = data;
-                //    vm.nombre = '';
-                //    vm.user_is_logged = false;
-                //}
             });
     }
 
     function ingresar() {
         document.getElementById("parallax").scrollTop = 636;
         LoginService.login(vm.mail.trim(), vm.password.trim(), function (data) {
-            if (data[0].nombre !== undefined) {
+            if (data[0].nombre != null && data[0].nombre.trim().length > 0) {
                 vm.active_form = 'carrito';
-                vm.nombre = data[0].nombre;
+                //vm.nombre = data[0].nombre;
                 vm.user_is_logged = true;
+                vm.cliente = data[0];
+                vm.mail = '';
+                vm.password = '';
 
                 LoginService.getHistoricoPedidos(LoginService.checkLogged().cliente[0].cliente_id,
-                    function (data) {
-                        console.log(data);
-                        vm.historico_pedidos = data;
+                    function (data2) {
+                        console.log(data2);
+                        vm.historico_pedidos = data2;
                     });
 
             } else {

@@ -35,7 +35,7 @@
                 </div>
                 <div ng-if="mainCtrl.user_is_logged">Bienvenido {{mainCtrl.cliente.nombre}}! <a
                         ng-click="mainCtrl.logout()"
-                        href="">Salir</a></a>
+                        href="">Salir</a>
                 </div>
             </div>
         </div>
@@ -55,8 +55,8 @@
                 <div ng-if="!mainCtrl.menu_mobile" id="menu-home" ng-click="mainCtrl.active_form = 'main';">
                     <div><img src="img/home.png" alt="compras"/></div>
                 </div>
-                <div ng-if="!mainCtrl.menu_mobile" id="menu-carrito" ng-click="">
-                    <span>Carrito</span>
+                <div ng-if="!mainCtrl.menu_mobile" id="menu-carrito" ng-click="mainCtrl.comprar();">
+                    <span>Mi Carrito</span>
                 </div>
                 <div ng-if="!mainCtrl.menu_mobile" id="menu-account" ng-click="mainCtrl.cuenta();">
                     <span>Mi Cuenta</span>
@@ -573,7 +573,7 @@
                         <div>
                             <div class="footer-lower-title">REDES SOCIALES</div>
                             <br/>
-                            <img src="img/social_01.png" alt="facebook" ng-click="https://www.facebook.com/pages/Bayres-No-Problem-Grow-Shop/501719106529294"/>
+                            <img src="img/social_01.png" alt="facebook" ng-click=""/>
                             <img src="img/social_02.png" alt="twitter"/>
                         </div>
                     </div>
