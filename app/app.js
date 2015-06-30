@@ -38,6 +38,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     vm.active_form_before = '';
 
     vm.addProducto = addProducto;
+    vm.agregarProducto = agregarProducto;
+    vm.agregarOferta = agregarOferta;
     vm.searchByName = searchByName;
     vm.showDetails = showDetails;
     vm.hideDetails = hideDetails;
@@ -58,20 +60,38 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     vm.creaCliente = false;
     vm.compraTerminada = false;
     vm.slider_nro = 1;
+    //Agregado por mateo
+    vm.actualizarCliente = actualizarCliente;
+    vm.confirmarCarrito = confirmarCarrito;
+    vm.selectDetalle = selectDetalle;
+    vm.borrarCarrito = borrarCarrito;
+    vm.masVendidosForm = masVendidosForm;
+    vm.destacadosForm = destacadosForm;
+    vm.sucursalesForm = sucursalesForm;
+    vm.detalles = [];
+    vm.pass_old = '';
+    vm.pass_new = '';
 
+    //Manejo de errores
+    vm.message_error = '';
+    vm.update_error = '0';
+    vm.change_pwd_error = '0';
+    vm.carrito_mensaje = '0';
 
     vm.menu_mobile = false;
     vm.menu_mobile_open = false;
 
-    console.log(window.innerWidth);
+    //console.log(window.innerWidth);
 
     window.addEventListener('resize', function () {
-        if (window.innerWidth < 800) {
-            vm.menu_mobile = true;
-        } else {
-            vm.menu_mobile = false;
+        vm.menu_mobile = (window.innerWidth < 800);
 
-        }
+        //if (window.innerWidth < 800) {
+        //    vm.menu_mobile = true;
+        //} else {
+        //    vm.menu_mobile = false;
+        //
+        //}
         $scope.$apply();
     });
 
@@ -86,6 +106,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         vm.user_is_logged = true;
 
         vm.cliente = LoginService.checkLogged().cliente[0];
+        console.log(vm.cliente);
     }
 
 
@@ -94,6 +115,20 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         vm.sucursal = data[0];
     });
 
+    function destacadosForm() {
+        document.getElementById("parallax").scrollTop = 1036;
+        vm.active_form = 'main';
+    }
+
+    function masVendidosForm() {
+        document.getElementById("parallax").scrollTop = 1536;
+        vm.active_form = 'main';
+    }
+
+    function sucursalesForm() {
+        document.getElementById("parallax").scrollTop = 0;
+        vm.active_form = 'main';
+    }
 
     //Estas 2 funciones solo sirven para el link del login
     function ingresarCliente() {
@@ -108,18 +143,127 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         document.getElementById("parallax").scrollTop = 636;
     }
 
-    function modificarPass() {
+    function modificarPass(){
+        inicializarVariables();
+
         if (!LoginService.checkLogged()) {
 
         } else {
-            vm.user_is_logged = true;
-            vm.cliente_id = LoginService.checkLogged().cliente[0].cliente_id;
+            if(vm.pass_old.trim().length > 0 && vm.pass_new.trim().length > 0) {
+                //if((vm.pass_old.trim().length >= 5 && vm.pass_old.trim().length <= 25)
+                //    && (vm.pass_new.trim().length >= 5 && vm.pass_new.trim().length <= 25)) {
 
-            LoginService.changePassword(vm.cliente_id, vm.pass_old, vm.pass_new,
-                function (data) {
-                    console.log(data);
-                });
+                vm.user_is_logged = true;
+                vm.cliente_id = LoginService.checkLogged().cliente[0].cliente_id;
+
+                LoginService.changePassword(vm.cliente_id, vm.pass_old, vm.pass_new,
+                    function (data) {
+                        vm.change_pwd_error = '1';
+                        if(data == 1) {
+                            vm.message_error = 'La contrase単a se modifico satisfactoriamente';
+                        }
+                        else {
+                            vm.change_pwd_error = '1';
+                            vm.message_error = 'Error modificando la contrase単a';
+                        }
+                        console.log(data);
+                    });
+                /*}
+                 else {
+                 vm.change_pwd_error = '1';
+                 vm.message_error = 'Las contrase単as deben contener de 5 a 25 caracteres';
+                 }*/
+            }
+            else {
+                vm.change_pwd_error = '1';
+                vm.message_error = 'Las contrase単as no pueden ser vacias';
+            }
         }
+    }
+
+    function inicializarVariables() {
+        vm.update_error = '0';
+        vm.change_pwd_error = '0';
+        vm.message_error = '';
+        vm.carrito_mensaje = '0';
+    }
+
+    function actualizarCliente() {
+        inicializarVariables();
+
+        if (!LoginService.checkLogged()) {
+            //Si no esta logueado lo pongo en false
+            vm.user_is_logged = false;
+            //lo mando al formulario para logueo
+            vm.active_form = 'login';
+            //limpio el objeto cliente
+            vm.cliente = {};
+        } else {
+            vm.user_is_logged = true;
+            if(vm.cliente.apellido.trim().length > 0 && vm.cliente.nombre.trim().length > 0 && vm.cliente.mail.trim().length > 0) {
+                if (ValidateEmail(vm.cliente.mail.trim())) {
+                    LoginService.getClienteByEmail(vm.cliente.mail.trim(), function(data) {
+                         if (data.user != null) {
+                             if(vm.cliente.cliente_id == data.user.cliente_id){
+                                 //Si no encontro dentro de la db otro cliente
+                                 //con el email ingresado, actualizo los datos
+                                 LoginService.updateCliente(vm.cliente.cliente_id, vm.cliente.nombre.trim(), vm.cliente.apellido.trim(),
+                                    vm.cliente.mail.trim(), vm.cliente.direccion.trim(), function(data) {
+                                         if (data.result) {
+                                             vm.update_error = '1';
+                                             vm.message_error = 'Los datos se actualizaron satisfactoriamente';
+                                         }
+                                         else {
+                                             vm.update_error = '1';
+                                             vm.message_error = 'Error modificando los datos 1';
+                                         }
+                                     });
+                             }
+                             else {
+                                 vm.update_error = '1';
+                                 vm.message_error = 'Ya existe otro cliente con el email ingresado';
+                             }
+                         }
+                         else {
+                             //Si no encontro dentro de la db otro cliente
+                             //con el email ingresado, actualizo los datos
+                             LoginService.updateCliente(vm.cliente.cliente_id, vm.cliente.nombre.trim(), vm.cliente.apellido.trim(),
+                                 vm.cliente.mail.trim(), vm.cliente.direccion.trim(), function(data){
+                                     console.log(data.result);
+                                     console.log((data.result) ? 1 : 0);
+                                 if(data.result) {
+                                     vm.update_error = '1';
+                                     vm.message_error = 'Los datos se actualizaron satisfactoriamente';
+                                 }
+                                 else {
+                                    vm.update_error = '1';
+                                    vm.message_error = 'Error modificando los datos 2';
+                                 }
+                             });
+                         }
+                     });
+                }
+                else {
+                    vm.update_error = '1';
+                    vm.message_error = 'El mail no es valido';
+                }
+            }
+            else {
+                vm.update_error = '1';
+                vm.message_error = 'Los campos no deben estar vacios';
+            }
+        }
+    }
+
+    /**
+     *
+     * @param email
+     * @returns {boolean}
+     */
+    function ValidateEmail(email)
+    {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email)
     }
 
     function finalizarCompra() {
@@ -164,7 +308,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
     function ingresar() {
         document.getElementById("parallax").scrollTop = 636;
-        LoginService.login(vm.mail, vm.password, function (data) {
+        LoginService.login(vm.mail.trim(), vm.password.trim(), function (data) {
             if (data[0].nombre !== undefined) {
                 vm.active_form = 'carrito';
                 vm.nombre = data[0].nombre;
@@ -208,6 +352,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     }
 
     function cuenta() {
+        inicializarVariables();
+
         document.getElementById("parallax").scrollTop = 636;
         if (!LoginService.checkLogged()) {
             vm.active_form = 'login';
@@ -217,8 +363,6 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     }
 
     function showDetails(detalle) {
-
-
         vm.active_form_before = vm.active_form;
         vm.active_form = 'details';
 
@@ -227,6 +371,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         vm.top_before = document.getElementById("parallax").scrollTop;
         document.getElementById("parallax").scrollTop = 636;
 
+        console.log(vm.detalle);
 
         //for(var i = vm.top; i <= 636; i++){
         //    console.log(i);
@@ -263,7 +408,26 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         }
     }
 
+    function confirmarCarrito() {
+        inicializarVariables();
+
+        vm.carrito_mensaje = '1';
+        vm.message_error = 'El pedido acaba de ser enviado';
+    }
+
+    function borrarCarrito() {
+        inicializarVariables();
+
+        vm.carrito_mensaje = '1';
+        vm.message_error = 'El carrito se borro satisfactoriamente';
+    }
+
+    function selectDetalle() {
+        vm.detalles = vm.historico_pedidos[2].detalles;
+    }
+
     acAngularProductosService.getOfertas(function (data) {
+        console.log(data);
         vm.ofertas = data;
     });
 
@@ -277,11 +441,30 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     });
 
 
+
+    function agregarProducto(producto){
+
+        producto.kit_id = -1;
+        addProducto(producto);
+    }
+
+    function agregarOferta(oferta){
+        producto.producto_id = -1;
+        producto.kit_id = producto.kit_id;
+        producto.precios[0].precio = oferta.precio;
+        addProducto(producto);
+    }
+
+
     function addProducto(producto) {
 
+
+        //console.log(producto);
         acAngularCarritoServiceAcciones.addProducto(producto);
 
     }
+
+
 
     var container = document.getElementsByClassName('parallax');
 

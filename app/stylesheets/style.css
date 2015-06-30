@@ -244,33 +244,43 @@ body {
   bottom: 0;
   left: 0;
 }
-/* line 200, ../sass/style.scss */
-#sucursales #sucursales-01 {
-  background: url("../img/sucursales_01.png") 50% 50% no-repeat;
+@media (max-width: 500px) {
+  /* line 200, ../sass/style.scss */
+  #sucursales #sucursales-01 {
+    background: url("../img/sucursales_01M.png") 50% 50% no-repeat;
+  }
 }
-/* line 203, ../sass/style.scss */
-#sucursales #sucursales-02 {
-  background: url("../img/sucursales_02.png") 50% 50% no-repeat;
+@media (min-width: 501px) {
+  /* line 200, ../sass/style.scss */
+  #sucursales #sucursales-01 {
+    background: url("../img/sucursales_01.png") 50% 50% no-repeat;
+  }
 }
-/* line 206, ../sass/style.scss */
+@media (min-width: 501px) {
+  /* line 211, ../sass/style.scss */
+  #sucursales #sucursales-02 {
+    background: url("../img/sucursales_02.png") 50% 50% no-repeat;
+  }
+}
+/* line 216, ../sass/style.scss */
 #sucursales #sucursales-03 {
   background: url("../img/sucursales_03.png") 50% 50% no-repeat;
 }
-/* line 209, ../sass/style.scss */
+/* line 219, ../sass/style.scss */
 #sucursales #sucursales-04 {
   background: url("../img/sucursales_04.png") 50% 50% no-repeat;
 }
-/* line 212, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 #sucursales #sucursales-05 {
   background: url("../img/sucursales_05.png") 50% 50% no-repeat;
   height: 1500px;
 }
-/* line 216, ../sass/style.scss */
+/* line 226, ../sass/style.scss */
 #sucursales #sucursales-06 {
   background: url("../img/sucursales_06.png") 50% 50% no-repeat;
 }
 
-/* line 222, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 #menu {
   height: 50px;
   top: 675px;
@@ -279,7 +289,7 @@ body {
   background-color: khaki;
   z-index: 80;
 }
-/* line 230, ../sass/style.scss */
+/* line 240, ../sass/style.scss */
 #menu #menu-container {
   background-color: green;
   z-index: 80;
@@ -287,14 +297,14 @@ body {
   width: 100%;
 }
 
-/* line 239, ../sass/style.scss */
+/* line 249, ../sass/style.scss */
 #tierra {
   height: 500px;
   top: 100px;
   right: 0px;
   left: 0px;
 }
-/* line 247, ../sass/style.scss */
+/* line 257, ../sass/style.scss */
 #tierra #tierra_09,
 #tierra #tierra_08,
 #tierra #tierra_07,
@@ -308,24 +318,24 @@ body {
   width: 100%;
   position: absolute;
 }
-/* line 266, ../sass/style.scss */
+/* line 276, ../sass/style.scss */
 #tierra #tierra_04 {
   background: url("../img/tierra_04.jpg") 50% 0% no-repeat;
 }
-/* line 269, ../sass/style.scss */
+/* line 279, ../sass/style.scss */
 #tierra #tierra_03 {
   background: url("../img/tierra_03.png") 50% 50% no-repeat;
 }
-/* line 272, ../sass/style.scss */
+/* line 282, ../sass/style.scss */
 #tierra #tierra_02 {
   background: url("../img/tierra_02.png") 50% 50% no-repeat;
 }
-/* line 275, ../sass/style.scss */
+/* line 285, ../sass/style.scss */
 #tierra #tierra_01 {
   background: url("../img/tierra_01.png") 50% 50% no-repeat;
 }
 
-/* line 299, ../sass/style.scss */
+/* line 309, ../sass/style.scss */
 #destacados {
   height: 500px;
   top: 100px;
@@ -333,7 +343,7 @@ body {
   left: 0px;
   z-index: 30;
 }
-/* line 307, ../sass/style.scss */
+/* line 317, ../sass/style.scss */
 #destacados #destacados_04,
 #destacados #destacados_03,
 #destacados #destacados_02,
@@ -341,31 +351,31 @@ body {
   height: 500px;
   width: 100%;
 }
-/* line 316, ../sass/style.scss */
+/* line 326, ../sass/style.scss */
 #destacados #destacados_04 {
   background: url("../img/destacados_04.jpg") 50% 0% no-repeat;
 }
-/* line 319, ../sass/style.scss */
+/* line 329, ../sass/style.scss */
 #destacados #destacados_03 {
   background: url("../img/destacados_03.png") 50% 50% no-repeat;
 }
-/* line 322, ../sass/style.scss */
+/* line 332, ../sass/style.scss */
 #destacados #destacados_02 {
   background: url("../img/destacados_02.png") 50% 50% no-repeat;
 }
-/* line 325, ../sass/style.scss */
+/* line 335, ../sass/style.scss */
 #destacados #destacados_01 {
   background: url("../img/destacados_01.png") 50% 50% no-repeat;
 }
 
-/* line 330, ../sass/style.scss */
+/* line 340, ../sass/style.scss */
 #caverna {
   height: 500px;
   top: 100px;
   right: 0px;
   left: 0px;
 }
-/* line 337, ../sass/style.scss */
+/* line 347, ../sass/style.scss */
 #caverna #lava {
   background-color: darkcyan;
   height: 400px;
@@ -373,7 +383,7 @@ body {
   right: 0px;
   left: 0px;
 }
-/* line 356, ../sass/style.scss */
+/* line 366, ../sass/style.scss */
 #caverna #lava_21,
 #caverna #lava_20,
 #caverna #lava_19,
@@ -399,36 +409,36 @@ body {
   width: 100%;
   position: absolute;
 }
-/* line 398, ../sass/style.scss */
+/* line 408, ../sass/style.scss */
 #caverna #lava_06 {
   background: url("../img/lava_06.png") 50% 0% no-repeat;
 }
-/* line 401, ../sass/style.scss */
+/* line 411, ../sass/style.scss */
 #caverna #lava_05 {
   background: url("../img/lava_05.png") 50% 0% no-repeat;
 }
-/* line 404, ../sass/style.scss */
+/* line 414, ../sass/style.scss */
 #caverna #lava_04 {
   background: url("../img/lava_04.png") 50% 0% no-repeat;
   height: 600px !important;
 }
-/* line 408, ../sass/style.scss */
+/* line 418, ../sass/style.scss */
 #caverna #lava_03 {
   background: url("../img/lava_03.png") 50% 0% no-repeat;
   height: 700px !important;
 }
-/* line 412, ../sass/style.scss */
+/* line 422, ../sass/style.scss */
 #caverna #lava_02 {
   background: url("../img/lava_02.png") 50% 50% no-repeat;
   height: 700px !important;
 }
-/* line 416, ../sass/style.scss */
+/* line 426, ../sass/style.scss */
 #caverna #lava_01 {
   background: url("../img/lava_01.png") 50% 50% no-repeat;
   height: 700px !important;
 }
 
-/* line 423, ../sass/style.scss */
+/* line 433, ../sass/style.scss */
 #medios {
   position: absolute;
   height: 50px;
@@ -439,7 +449,7 @@ body {
   background-color: blue;
 }
 
-/* line 433, ../sass/style.scss */
+/* line 443, ../sass/style.scss */
 #footer {
   position: absolute;
   height: 450px;

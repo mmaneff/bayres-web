@@ -198,10 +198,20 @@ body {
   }
 
   #sucursales-01 {
-    background: url("../img/sucursales_01.png") 50% 50% no-repeat;
+    @media (max-width: 500px){
+      background: url("../img/sucursales_01M.png") 50% 50% no-repeat;
+
+    }
+
+    @media (min-width: 501px){
+      background: url("../img/sucursales_01.png") 50% 50% no-repeat;
+
+    }
   }
   #sucursales-02 {
-    background: url("../img/sucursales_02.png") 50% 50% no-repeat;
+    @media (min-width: 501px){
+      background: url("../img/sucursales_02.png") 50% 50% no-repeat;
+    }
   }
   #sucursales-03 {
     background: url("../img/sucursales_03.png") 50% 50% no-repeat;
