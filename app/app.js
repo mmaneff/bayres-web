@@ -445,15 +445,22 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
     function agregarProducto(producto){
 
-        producto.kit_id = -1;
+        producto.oferta_id = -1;
         addProducto(producto);
     }
 
     function agregarOferta(oferta){
-        producto.producto_id = -1;
-        producto.kit_id = producto.kit_id;
-        producto.precios[0].precio = oferta.precio;
-        addProducto(producto);
+        var prod_oferta = {};
+
+        prod_oferta["producto_id"] = -1;
+        prod_oferta.precios = [];
+        var precio = {precio:0};
+        prod_oferta.precios.push(precio);
+        prod_oferta.precios[0].precio = oferta.precio;
+        prod_oferta.cantidad = 1;
+        prod_oferta.oferta_id = oferta.oferta_id;
+        prod_oferta.nombre = oferta.descripcion;
+        addProducto(prod_oferta);
     }
 
 

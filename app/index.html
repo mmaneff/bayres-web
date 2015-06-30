@@ -394,7 +394,7 @@
                 <span class="oferta-titulo">{{mainCtrl.ofertas[0].titulo}}</span>
                 <p>{{mainCtrl.ofertas[0].descripcion}}</p>
                 <div class="btn-group">
-                    <div class="btn-comprar" ng-click="mainCtrl.agregarProducto(destacado)">
+                    <div class="btn-comprar" ng-click="mainCtrl.agregarOferta(mainCtrl.ofertas[0])">
                         <div class="btn-comprar-position">
                             <span style="color:red;">$ </span>{{mainCtrl.ofertas[0].precio}}
                         </div>
@@ -408,7 +408,7 @@
                 <span class="oferta-titulo">{{mainCtrl.ofertas[1].titulo}}</span>
                 <p>{{mainCtrl.ofertas[1].descripcion}}</p>
                 <div class="btn-group">
-                    <div class="btn-comprar" ng-click="mainCtrl.agregarProducto(destacado)">
+                    <div class="btn-comprar" ng-click="mainCtrl.agregarOferta(mainCtrl.ofertas[1])">
                         <div class="btn-comprar-position">
                             <span style="color:red;">$ </span>{{mainCtrl.ofertas[1].precio}}
                         </div>
@@ -422,12 +422,12 @@
                 <span class="oferta-titulo">{{mainCtrl.ofertas[2].titulo}}</span>
                 <p>{{mainCtrl.ofertas[2].descripcion}}</p>
                 <div class="btn-group">
-                    <div class="btn-comprar" ng-click="mainCtrl.agregarProducto(destacado)">
+                    <div class="btn-comprar" ng-click="mainCtrl.agregarOferta(mainCtrl.ofertas[2])">
                         <div class="btn-comprar-position">
                             <span style="color:red;">$ </span>{{mainCtrl.ofertas[2].precio}}
                         </div>
                     </div>
-                    <div class="btn-info" ng-click="mainCtrl.showDetails(destacado);"></div>
+                    <div class="btn-info" ng-click="mainCtrl.showDetails(mainCtrl.ofertas[2]);"></div>
                     <div class="btn-face"></div>
                 </div>
             </div>
@@ -436,12 +436,12 @@
                 <span class="oferta-titulo">{{mainCtrl.ofertas[3].titulo}}</span>
                 <p>{{mainCtrl.ofertas[3].descripcion}}</p>
                 <div class="btn-group">
-                    <div class="btn-comprar" ng-click="mainCtrl.agregarProducto(destacado)">
+                    <div class="btn-comprar" ng-click="mainCtrl.agregarOferta(mainCtrl.ofertas[3])">
                         <div class="btn-comprar-position">
                             <span style="color:red;">$ </span>{{mainCtrl.ofertas[3].precio}}
                         </div>
                     </div>
-                    <div class="btn-info" ng-click="mainCtrl.showDetails(destacado);"></div>
+                    <div class="btn-info" ng-click="mainCtrl.showDetails(mainCtrl.ofertas[3]);"></div>
                     <div class="btn-face"></div>
                 </div>
             </div>
