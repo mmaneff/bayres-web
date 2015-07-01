@@ -358,6 +358,9 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
                         vm.telefono, vm.direccion, function (data) {
                             if (data == 'true') {
                                 //vm.active_form = 'main';
+
+                                ingresar();
+
                                 $location.path('/commerce/main');
                                 vm.nombre = '';
                                 vm.apellido = '';
@@ -367,6 +370,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
                                 vm.telefono = '';
                                 vm.direccion = '';
                                 vm.mail_repeat = '';
+
+
                             }
                             else {
                                 vm.message_error = 'Ocurrio un error creando el usuario';
