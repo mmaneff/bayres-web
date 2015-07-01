@@ -120,7 +120,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         vm.user_is_logged = true;
 
         vm.cliente = LoginService.checkLogged().cliente[0];
-        console.log(vm.cliente);
+        //console.log(vm.cliente);
     }
 
 
@@ -390,7 +390,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     if (LoginService.checkLogged()) {
         LoginService.getHistoricoPedidos(LoginService.checkLogged().cliente[0].cliente_id,
             function (data) {
-                console.log(data);
+                //console.log(data);
                 vm.historico_pedidos = data;
             });
     }
@@ -515,7 +515,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     }
 
     acAngularProductosService.getOfertas(function (data) {
-        console.log(data);
+        //console.log(data);
         vm.ofertas = data;
     });
 
@@ -583,7 +583,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         showPosition();
         function showPosition() {
             //console.log('top: ' + window.pageYOffset);
-            console.log(document.getElementById("parallax").scrollTop);
+            //console.log(document.getElementById("parallax").scrollTop);
             vm.top = document.getElementById("parallax").scrollTop;
             //console.log('bottom: ' + (window.pageYOffset + window.innerHeight));
 
