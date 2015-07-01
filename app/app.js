@@ -301,11 +301,24 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
         var ret_comprar = acAngularCarritoServiceAcciones.comprar(envio_retira, function (data) {
 
+
+
+
             vm.compraTerminada = true;
             $timeout(function () {
                 vm.compraTerminada = false;
                 //vm.active_form = 'main';
                 $location.path('/commerce/main');
+
+                vm.historico_pedidos = [];
+                LoginService.getHistoricoPedidos(LoginService.checkLogged().cliente[0].cliente_id,
+                    function (data2) {
+                        //console.log('entra');
+                        //console.log(data2);
+                        vm.historico_pedidos = data2;
+                        //$scope.$apply();
+                    });
+
             }, 2000);
         });
 
@@ -326,38 +339,55 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         vm.message_error = '';
         vm.usuario_creado = 0;
         document.getElementById("parallax").scrollTop = 636;
-        if(vm.mail.trim().length > 0 && vm.mail_repeat.trim().length > 0) {
-            if(vm.mail.trim() === vm.mail_repeat.trim()) {
-                console.log('llamando al create');
-                LoginService.create(vm.nombre, vm.apellido, vm.mail, vm.password, vm.fecha_nacimiento,
-                    vm.telefono, vm.direccion, function (data) {
-                        if (data == 'true') {
-                            //vm.active_form = 'main';
-                            $location.path('/commerce/main');
-                            vm.nombre = '';
-                            vm.apellido = '';
-                            vm.mail = '';
-                            vm.password = '';
-                            vm.fecha_nacimiento = '';
-                            vm.telefono = '';
-                            vm.direccion = '';
-                            vm.mail_repeat = '';
-                        }
-                        else {
-                            vm.message_error = 'Ocurrio un error creando el usuario';
-                            vm.usuario_creado = -1;
-                        }
-                    });
+
+        LoginService.existeCliente(vm.mail,function(data){
+
+            if(data == 'true'){
+
+                vm.message_error = 'El mail ya se encuentra en uso. En caso de no recordar la contraseña, solicitela a través de la página.';
+                vm.usuario_creado = -1;
+                return;
+            }
+
+
+
+            if(vm.mail.trim().length > 0 && vm.mail_repeat.trim().length > 0) {
+                if(vm.mail.trim() === vm.mail_repeat.trim()) {
+                    //console.log('llamando al create');
+                    LoginService.create(vm.nombre, vm.apellido, vm.mail, vm.password, vm.fecha_nacimiento,
+                        vm.telefono, vm.direccion, function (data) {
+                            if (data == 'true') {
+                                //vm.active_form = 'main';
+                                $location.path('/commerce/main');
+                                vm.nombre = '';
+                                vm.apellido = '';
+                                vm.mail = '';
+                                vm.password = '';
+                                vm.fecha_nacimiento = '';
+                                vm.telefono = '';
+                                vm.direccion = '';
+                                vm.mail_repeat = '';
+                            }
+                            else {
+                                vm.message_error = 'Ocurrio un error creando el usuario';
+                                vm.usuario_creado = -1;
+                            }
+                        });
+                }
+                else {
+                    vm.message_error = 'Los correos deben ser iguales';
+                    vm.usuario_creado = -1;
+                }
             }
             else {
-                vm.message_error = 'Los correos deben ser iguales';
+                vm.message_error = 'Los correos son obligatorios';
                 vm.usuario_creado = -1;
             }
-        }
-        else {
-            vm.message_error = 'Los correos son obligatorios';
-            vm.usuario_creado = -1;
-        }
+
+        });
+
+
+
     }
 
     function ingresar() {
@@ -374,7 +404,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
                 LoginService.getHistoricoPedidos(LoginService.checkLogged().cliente[0].cliente_id,
                     function (data2) {
-                        console.log(data2);
+                        //console.log(data2);
                         vm.historico_pedidos = data2;
                     });
 
