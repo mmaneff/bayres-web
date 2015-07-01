@@ -42,6 +42,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     vm.agregarOferta = agregarOferta;
     vm.searchByName = searchByName;
     vm.showDetails = showDetails;
+    vm.showDetailsOferta = showDetailsOferta;
     vm.hideDetails = hideDetails;
     vm.finalizarCompra = finalizarCompra;
     vm.comprar = comprar;
@@ -363,6 +364,28 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         }
     }
 
+    function showDetailsOferta(oferta){
+        var prod_oferta = {};
+        prod_oferta["producto_id"] = -1;
+        prod_oferta.precios = [];
+        var precio = {precio:0};
+        prod_oferta.precios.push(precio);
+        prod_oferta.precios[0].precio = oferta.precio;
+        prod_oferta.cantidad = 1;
+
+        prod_oferta.fotos = [];
+        var foto = {nombre:''};
+        prod_oferta.fotos.push(foto);
+        prod_oferta.fotos[0].nombre = oferta.imagen;
+
+        prod_oferta.oferta_id = oferta.oferta_id;
+        prod_oferta.nombre = oferta.titulo;
+        prod_oferta.descripcion = oferta.descripcion;
+
+
+        showDetails(prod_oferta);
+    }
+
     function showDetails(detalle) {
         vm.active_form_before = vm.active_form;
         vm.active_form = 'details';
@@ -459,7 +482,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         prod_oferta.precios[0].precio = oferta.precio;
         prod_oferta.cantidad = 1;
         prod_oferta.oferta_id = oferta.oferta_id;
-        prod_oferta.nombre = oferta.descripcion;
+        prod_oferta.nombre = oferta.titulo;
+        prod_oferta.descripcion = oferta.descripcion;
         addProducto(prod_oferta);
     }
 

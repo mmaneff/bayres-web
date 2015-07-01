@@ -137,11 +137,17 @@
                                 </div>
                                 <div class="btn-group" style="position: absolute; right: 0%;">
                                     <!--div class="spacer"></div-->
-                                    <div class="btn-comprar-detalle" ng-click="mainCtrl.agregarProducto(destacado)">
+                                    <div  class="btn-comprar-detalle" ng-click="mainCtrl.agregarProducto(mainCtrl.detalle)">
                                         <div class="btn-comprar-position" style="margin-right:40px">
                                             <span style="color:red;">$ </span>{{mainCtrl.detalle.precios[0].precio}}
                                         </div>
                                     </div>
+
+                                    <!--<div ng-if="mainCtrl.detalle.oferta_id !== -1" class="btn-comprar-detalle" ng-click="mainCtrl.agregarOferta(destacado)">-->
+                                        <!--<div class="btn-comprar-position" style="margin-right:40px">-->
+                                            <!--<span style="color:red;">$ </span>{{mainCtrl.detalle.precios[0].precio}}-->
+                                        <!--</div>-->
+                                    <!--</div>-->
                                     <div class="btn-info-detalle" ng-click="mainCtrl.hideDetails();"></div>
                                     <div class="btn-face-detalle"></div>
                                 </div>
@@ -390,7 +396,8 @@
         <!--</div>-->
         <div id="ofertas" ng-if="mainCtrl.active_form == 'main';">
             <div id="ofertas-container-01" ng-if="mainCtrl.slider_nro == 1;">
-                <img src="./img/slider_01.png" alt=""/>
+
+                <img ng-src="./img/{{mainCtrl.ofertas[0].imagen}}" alt="{{mainCtrl.ofertas[0].imagen}}"/>
                 <span class="oferta-titulo">{{mainCtrl.ofertas[0].titulo}}</span>
                 <p>{{mainCtrl.ofertas[0].descripcion}}</p>
                 <div class="btn-group">
@@ -399,12 +406,12 @@
                             <span style="color:red;">$ </span>{{mainCtrl.ofertas[0].precio}}
                         </div>
                     </div>
-                    <div class="btn-info" ng-click="mainCtrl.showDetails(mainCtrl.ofertas[0]);"></div>
+                    <div class="btn-info" ng-click="mainCtrl.showDetailsOferta(mainCtrl.ofertas[0]);"></div>
                     <div class="btn-face"></div>
                 </div>
             </div>
             <div id="ofertas-container-02" ng-if="mainCtrl.slider_nro == 2;">
-                <img src="./img/slider_02.png" alt=""/>
+                <img ng-src="./img/{{mainCtrl.ofertas[1].imagen}}" alt="{{mainCtrl.ofertas[1].imagen}}"/>
                 <span class="oferta-titulo">{{mainCtrl.ofertas[1].titulo}}</span>
                 <p>{{mainCtrl.ofertas[1].descripcion}}</p>
                 <div class="btn-group">
@@ -413,12 +420,12 @@
                             <span style="color:red;">$ </span>{{mainCtrl.ofertas[1].precio}}
                         </div>
                     </div>
-                    <div class="btn-info" ng-click="mainCtrl.showDetails(mainCtrl.ofertas[1]);"></div>
+                    <div class="btn-info" ng-click="mainCtrl.showDetailsOferta(mainCtrl.ofertas[1]);"></div>
                     <div class="btn-face"></div>
                 </div>
             </div>
             <div id="ofertas-container-03" ng-if="mainCtrl.slider_nro == 3;">
-                <img src="./img/slider_03.png" alt=""/>
+                <img ng-src="./img/{{mainCtrl.ofertas[2].imagen}}" alt="{{mainCtrl.ofertas[2].imagen}}"/>
                 <span class="oferta-titulo">{{mainCtrl.ofertas[2].titulo}}</span>
                 <p>{{mainCtrl.ofertas[2].descripcion}}</p>
                 <div class="btn-group">
@@ -427,12 +434,12 @@
                             <span style="color:red;">$ </span>{{mainCtrl.ofertas[2].precio}}
                         </div>
                     </div>
-                    <div class="btn-info" ng-click="mainCtrl.showDetails(mainCtrl.ofertas[2]);"></div>
+                    <div class="btn-info" ng-click="mainCtrl.showDetailsOferta(mainCtrl.ofertas[2]);"></div>
                     <div class="btn-face"></div>
                 </div>
             </div>
             <div id="ofertas-container-04" ng-if="mainCtrl.slider_nro == 4;">
-                <img src="./img/slider_04.png" alt=""/>
+                <img ng-src="./img/{{mainCtrl.ofertas[3].imagen}}" alt="{{mainCtrl.ofertas[3].imagen}}"/>
                 <span class="oferta-titulo">{{mainCtrl.ofertas[3].titulo}}</span>
                 <p>{{mainCtrl.ofertas[3].descripcion}}</p>
                 <div class="btn-group">
@@ -441,7 +448,7 @@
                             <span style="color:red;">$ </span>{{mainCtrl.ofertas[3].precio}}
                         </div>
                     </div>
-                    <div class="btn-info" ng-click="mainCtrl.showDetails(mainCtrl.ofertas[3]);"></div>
+                    <div class="btn-info" ng-click="mainCtrl.showDetailsOferta(mainCtrl.ofertas[3]);"></div>
                     <div class="btn-face"></div>
                 </div>
             </div>
