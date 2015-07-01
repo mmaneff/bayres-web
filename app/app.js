@@ -69,6 +69,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     vm.masVendidosForm = masVendidosForm;
     vm.destacadosForm = destacadosForm;
     vm.sucursalesForm = sucursalesForm;
+    vm.ofertasForm = ofertasForm;
     vm.detalles = [];
     vm.pass_old = '';
     vm.pass_new = '';
@@ -130,6 +131,13 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         document.getElementById("parallax").scrollTop = 0;
         vm.active_form = 'main';
     }
+
+
+    function ofertasForm() {
+        document.getElementById("parallax").scrollTop = 636;
+        vm.active_form = 'main';
+    }
+
 
     //Estas 2 funciones solo sirven para el link del login
     function ingresarCliente() {
@@ -272,13 +280,18 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
         var envio_retira = (vm.tipo == 0) ? vm.envios : vm.sucursal.nombre;
 
-        acAngularCarritoServiceAcciones.comprar(envio_retira, function (data) {
+        var ret_comprar = acAngularCarritoServiceAcciones.comprar(envio_retira, function (data) {
+
             vm.compraTerminada = true;
             $timeout(function () {
                 vm.compraTerminada = false;
                 vm.active_form = 'main';
             }, 2000);
         });
+
+        if(ret_comprar === false){
+            console.log('Mensaje de Carrito Vacío');
+        }
     }
 
 
