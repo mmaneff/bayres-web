@@ -9,14 +9,17 @@ angular.module('myApp', [
     'acLoginCarritoIngresar'
 ]).
     config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({redirectTo: '/view1'});
+        $routeProvider.otherwise({redirectTo: '/commerce/main'});
+        $routeProvider.when('/commerce/:parameter', {
+            controller: 'MainController'
+        });
     }]).controller('MainController', MainController);
 
 
 MainController.$inject = ['acAngularProductosService', 'acAngularCarritoServiceAcciones', '$scope', '$document',
-    'LoginService', 'acAngularSucursalesService', '$timeout'];
+    'LoginService', 'acAngularSucursalesService', '$timeout', '$routeParams', '$location'];
 function MainController(acAngularProductosService, acAngularCarritoServiceAcciones, $scope, $document,
-                        LoginService, acAngularSucursalesService, $timeout) {
+                        LoginService, acAngularSucursalesService, $timeout, $routeParams, $location) {
     var vm = this;
     vm.ofertas = [];
     vm.destacados = [];
@@ -34,7 +37,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     vm.envios = 'Buenos Aires';
     vm.cliente = {};
 
-    vm.active_form = 'main';
+    //vm.active_form = 'main';
+    vm.active_form =($routeParams.parameter === undefined)?'main':$routeParams.parameter;
     vm.active_form_before = '';
 
     vm.addProducto = addProducto;
@@ -85,6 +89,14 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
     //console.log(window.innerWidth);
 
+    $scope.$on('$routeChangeSuccess', function(next, current) {
+        //console.log($routeParams);
+
+        vm.active_form =($routeParams.parameter === undefined)?'main':$routeParams.parameter;
+        //vm.active_form =(next === undefined)?'main':next;
+    });
+
+
     window.addEventListener('resize', function () {
         vm.menu_mobile = (window.innerWidth < 800);
 
@@ -119,36 +131,42 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
     function destacadosForm() {
         document.getElementById("parallax").scrollTop = 1036;
-        vm.active_form = 'main';
+        //vm.active_form = 'main';
+        $location.path('/commerce/main');
     }
 
     function masVendidosForm() {
         document.getElementById("parallax").scrollTop = 1536;
-        vm.active_form = 'main';
+        //vm.active_form = 'main';
+        $location.path('/commerce/main');
     }
 
     function sucursalesForm() {
         document.getElementById("parallax").scrollTop = 0;
-        vm.active_form = 'main';
+        //vm.active_form = 'main';
+        $location.path('/commerce/main');
     }
 
 
     function ofertasForm() {
         document.getElementById("parallax").scrollTop = 636;
-        vm.active_form = 'main';
+        //vm.active_form = 'main';
+        $location.path('/commerce/main');
     }
 
 
     //Estas 2 funciones solo sirven para el link del login
     function ingresarCliente() {
-        vm.active_form = 'login';
+        //vm.active_form = 'login';
+        $location.path('/commerce/login');
         vm.creaCliente = false;
         document.getElementById("parallax").scrollTop = 636;
     }
 
     function crearCliente() {
         vm.message_error = '';
-        vm.active_form = 'login';
+        //vm.active_form = 'login';
+        $location.path('/commerce/login');
         vm.creaCliente = true;
         document.getElementById("parallax").scrollTop = 636;
     }
@@ -205,7 +223,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
             //Si no esta logueado lo pongo en false
             vm.user_is_logged = false;
             //lo mando al formulario para logueo
-            vm.active_form = 'login';
+            //vm.active_form = 'login';
+            $location.path('/commerce/login');
             //limpio el objeto cliente
             vm.cliente = {};
         } else {
@@ -285,7 +304,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
             vm.compraTerminada = true;
             $timeout(function () {
                 vm.compraTerminada = false;
-                vm.active_form = 'main';
+                //vm.active_form = 'main';
+                $location.path('/commerce/main');
             }, 2000);
         });
 
@@ -298,7 +318,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     function logout() {
         LoginService.logout();
         vm.user_is_logged = false;
-        vm.active_form = 'main';
+        //vm.active_form = 'main';
+        $location.path('/commerce/main');
     }
 
     function nuevoCliente() {
@@ -311,7 +332,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
                 LoginService.create(vm.nombre, vm.apellido, vm.mail, vm.password, vm.fecha_nacimiento,
                     vm.telefono, vm.direccion, function (data) {
                         if (data == 'true') {
-                            vm.active_form = 'main';
+                            //vm.active_form = 'main';
+                            $location.path('/commerce/main');
                             vm.nombre = '';
                             vm.apellido = '';
                             vm.mail = '';
@@ -342,7 +364,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         document.getElementById("parallax").scrollTop = 636;
         LoginService.login(vm.mail.trim(), vm.password.trim(), function (data) {
             if (data[0].nombre != null && data[0].nombre.trim().length > 0) {
-                vm.active_form = 'carrito';
+                //vm.active_form = 'carrito';
+                $location.path('/commerce/carrito');
                 //vm.nombre = data[0].nombre;
                 vm.user_is_logged = true;
                 vm.cliente = data[0];
@@ -376,9 +399,11 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
         document.getElementById("parallax").scrollTop = 636;
         if (!LoginService.checkLogged()) {
-            vm.active_form = 'login';
+            //vm.active_form = 'login';
+            $location.path('/commerce/login');
         } else {
-            vm.active_form = 'carrito';
+            //vm.active_form = 'carrito';
+            $location.path('/commerce/carrito');
         }
         //if (!acAngularCarritoServiceAcciones.comprar()) {
         //    vm.active_form = 'login';
@@ -392,9 +417,11 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
         document.getElementById("parallax").scrollTop = 636;
         if (!LoginService.checkLogged()) {
-            vm.active_form = 'login';
+            //vm.active_form = 'login';
+            $location.path('/commerce/login');
         } else {
-            vm.active_form = 'cuenta';
+            //vm.active_form = 'cuenta';
+            $location.path('/commerce/cuenta');
         }
     }
 
@@ -422,7 +449,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
     function showDetails(detalle) {
         vm.active_form_before = vm.active_form;
-        vm.active_form = 'details';
+        //vm.active_form = 'details';
+        $location.path('/commerce/details');
 
         vm.detalle = detalle;
         vm.details = true;
@@ -455,14 +483,16 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     function searchByName() {
         //console.log(vm.search.length);
         if (vm.search.length > 2) {
-            vm.active_form = 'search';
+            //vm.active_form = 'search';
+            $location.path('/commerce/search');
             acAngularProductosService.getProductoByName(vm.search, function (data) {
                 //console.log(data);
                 vm.productos = data;
             });
         } else {
 
-            vm.active_form = 'main';
+            //vm.active_form = 'main';
+            $location.path('/commerce/main');
         }
     }
 
