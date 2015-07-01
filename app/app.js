@@ -139,6 +139,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     }
 
     function crearCliente() {
+        vm.message_error = '';
         vm.active_form = 'login';
         vm.creaCliente = true;
         document.getElementById("parallax").scrollTop = 636;
@@ -288,21 +289,40 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     }
 
     function nuevoCliente() {
+        vm.message_error = '';
+        vm.usuario_creado = 0;
         document.getElementById("parallax").scrollTop = 636;
-        LoginService.create(vm.nombre, vm.apellido, vm.mail, vm.password, vm.fecha_nacimiento,
-            vm.telefono, vm.direccion, function (data) {
-                if (data == 'true') {
-                    vm.active_form = 'main';
-                    vm.nombre = '';
-                    vm.apellido = '';
-                    vm.mail = '';
-                    vm.password = '';
-                    vm.fecha_nacimiento = '';
-                    vm.telefono = '';
-                    vm.direccion = '';
-                    vm.mail_repeat = '';
-                }
-            });
+        if(vm.mail.trim().length > 0 && vm.mail_repeat.trim().length > 0) {
+            if(vm.mail.trim() === vm.mail_repeat.trim()) {
+                console.log('llamando al create');
+                LoginService.create(vm.nombre, vm.apellido, vm.mail, vm.password, vm.fecha_nacimiento,
+                    vm.telefono, vm.direccion, function (data) {
+                        if (data == 'true') {
+                            vm.active_form = 'main';
+                            vm.nombre = '';
+                            vm.apellido = '';
+                            vm.mail = '';
+                            vm.password = '';
+                            vm.fecha_nacimiento = '';
+                            vm.telefono = '';
+                            vm.direccion = '';
+                            vm.mail_repeat = '';
+                        }
+                        else {
+                            vm.message_error = 'Ocurrio un error creando el usuario';
+                            vm.usuario_creado = -1;
+                        }
+                    });
+            }
+            else {
+                vm.message_error = 'Los correos deben ser iguales';
+                vm.usuario_creado = -1;
+            }
+        }
+        else {
+            vm.message_error = 'Los correos son obligatorios';
+            vm.usuario_creado = -1;
+        }
     }
 
     function ingresar() {
@@ -323,6 +343,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
                     });
 
             } else {
+                vm.message_error = 'Mail o password incorrectos';
                 vm.usuario_creado = data;
                 vm.nombre = '';
                 vm.user_is_logged = false;
