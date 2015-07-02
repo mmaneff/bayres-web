@@ -536,10 +536,10 @@ body {
   margin-top: 80px;
 
 
-  @media (max-width: 360px){
-    width: 340px;
-    min-width: 340px;
-    max-width: 340px;
+  @media (max-width: 800px){
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     margin-left: 0;
   }
   //  background-color: #ffffff;
@@ -780,6 +780,13 @@ body {
     height: 398px;
     position: absolute;
     top: 0;
+    @media (max-width: 800px){
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+    }
+
   }
 
   #ofertas-container-01,
@@ -797,6 +804,11 @@ body {
       //height: 390px;
       margin: 10px;
       height: 90%;
+      @media (max-width: 800px){
+        width: 92%;
+        text-align: center;
+        //        right: 10px;
+      }
     }
 
     .oferta-titulo {
@@ -814,6 +826,12 @@ body {
       text-shadow: 2px 2px 2px rgba(#000000, 0.75);
       top: 1%;
       white-space: nowrap;
+
+      @media (max-width: 800px){
+        left: calc(50% - 100px);
+        text-align: center;
+//        right: 10px;
+      }
     }
     p {
       position: absolute;
@@ -824,11 +842,21 @@ body {
       font-family: 'Myriad Pro Condensed', serif;
       color: #ffffff;
       font-size: 20px;
+      @media (max-width: 800px){
+        left: calc(50% - 175px);
+        text-align: center;
+        //        right: 10px;
+      }
     }
     .btn-group {
       position: absolute;
       bottom: 4%;
       right: 0%;
+      @media (max-width: 800px){
+        left: calc(50% - 100px);
+        text-align: center;
+        //        right: 10px;
+      }
     }
     .btn-info, .btn-face {
       width: 57px;
