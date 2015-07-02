@@ -1183,10 +1183,10 @@ body {
   #ofertas #ofertas-container-02,
   #ofertas #ofertas-container-03,
   #ofertas #ofertas-container-04 {
-    width: 100%;
-    min-width: 100%;
+    width: 98%;
+    min-width: 98%;
     max-width: 100%;
-    margin-left: 0;
+    margin-left: 1%;
   }
 }
 /* line 792, ../sass/classic.scss */
@@ -1286,11 +1286,11 @@ body {
   #ofertas #ofertas-container-02 .btn-group,
   #ofertas #ofertas-container-03 .btn-group,
   #ofertas #ofertas-container-04 .btn-group {
-    left: calc(50% - 100px);
-    text-align: center;
+    left: calc(50% - 150px);
+    width: 100%;
   }
 }
-/* line 861, ../sass/classic.scss */
+/* line 862, ../sass/classic.scss */
 #ofertas #ofertas-container-01 .btn-info, #ofertas #ofertas-container-01 .btn-face,
 #ofertas #ofertas-container-02 .btn-info,
 #ofertas #ofertas-container-02 .btn-face,
@@ -1302,7 +1302,7 @@ body {
   height: 57px;
   cursor: pointer;
 }
-/* line 866, ../sass/classic.scss */
+/* line 867, ../sass/classic.scss */
 #ofertas #ofertas-container-01 .btn-comprar,
 #ofertas #ofertas-container-02 .btn-comprar,
 #ofertas #ofertas-container-03 .btn-comprar,
@@ -1315,7 +1315,7 @@ body {
   text-shadow: 0px 0px 2px #111111;
   color: #ffffff;
 }
-/* line 875, ../sass/classic.scss */
+/* line 876, ../sass/classic.scss */
 #ofertas #ofertas-container-01 .btn-comprar .btn-comprar-position,
 #ofertas #ofertas-container-02 .btn-comprar .btn-comprar-position,
 #ofertas #ofertas-container-03 .btn-comprar .btn-comprar-position,
@@ -1324,7 +1324,7 @@ body {
   text-align: right;
   margin-right: 40px;
 }
-/* line 881, ../sass/classic.scss */
+/* line 882, ../sass/classic.scss */
 #ofertas #ofertas-container-01 .btn-comprar button,
 #ofertas #ofertas-container-02 .btn-comprar button,
 #ofertas #ofertas-container-03 .btn-comprar button,
@@ -1333,7 +1333,7 @@ body {
   width: 134px;
   height: 57px;
 }
-/* line 886, ../sass/classic.scss */
+/* line 887, ../sass/classic.scss */
 #ofertas #ofertas-container-01 .btn-comprar button span,
 #ofertas #ofertas-container-02 .btn-comprar button span,
 #ofertas #ofertas-container-03 .btn-comprar button span,
@@ -1341,7 +1341,7 @@ body {
   font-size: 29px;
 }
 
-/* line 908, ../sass/classic.scss */
+/* line 909, ../sass/classic.scss */
 #ofertas-container-01.ng-enter,
 #ofertas-container-02.ng-enter,
 #ofertas-container-03.ng-enter,
@@ -1351,7 +1351,7 @@ body {
   animation: ofertas-container-enter 1s;
 }
 
-/* line 917, ../sass/classic.scss */
+/* line 918, ../sass/classic.scss */
 #ofertas-container-01.ng-leave,
 #ofertas-container-02.ng-leave,
 #ofertas-container-03.ng-leave,
@@ -1377,7 +1377,7 @@ body {
     transform: translate(1500px, 0);
   }
 }
-/* line 950, ../sass/classic.scss */
+/* line 951, ../sass/classic.scss */
 #destacados_list, #vendidos_list, #productos_list {
   z-index: 100000;
   position: absolute;
@@ -1395,14 +1395,14 @@ body {
   flex-wrap: wrap;
 }
 @media (max-width: 800px) {
-  /* line 950, ../sass/classic.scss */
+  /* line 951, ../sass/classic.scss */
   #destacados_list, #vendidos_list, #productos_list {
     margin-left: 90px;
     overflow-y: auto;
   }
 }
 @media (max-width: 600px) {
-  /* line 950, ../sass/classic.scss */
+  /* line 951, ../sass/classic.scss */
   #destacados_list, #vendidos_list, #productos_list {
     margin-left: 0%;
     flex-wrap: nowrap;
@@ -1411,7 +1411,7 @@ body {
     overflow-y: hidden;
   }
 }
-/* line 979, ../sass/classic.scss */
+/* line 980, ../sass/classic.scss */
 #destacados_list .outline, #vendidos_list .outline, #productos_list .outline {
   border: 1px solid #8cc63f;
   margin-left: 5px;
@@ -1420,7 +1420,7 @@ body {
   height: 180px;
   border-radius: 5px;
 }
-/* line 989, ../sass/classic.scss */
+/* line 990, ../sass/classic.scss */
 #destacados_list .destacado, #vendidos_list .destacado, #productos_list .destacado {
   width: 180px;
   min-width: 180px;
@@ -1432,14 +1432,14 @@ body {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
   border-radius: 5px;
 }
-/* line 999, ../sass/classic.scss */
+/* line 1000, ../sass/classic.scss */
 #destacados_list .destacado img, #vendidos_list .destacado img, #productos_list .destacado img {
   height: 112px;
   width: 112px;
   margin-left: calc(50% - 56px);
 }
 
-/* line 1008, ../sass/classic.scss */
+/* line 1009, ../sass/classic.scss */
 .title {
   position: absolute;
   text-align: center;
@@ -1451,7 +1451,7 @@ body {
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.75);
 }
 @media (max-width: 600px) {
-  /* line 1008, ../sass/classic.scss */
+  /* line 1009, ../sass/classic.scss */
   .title {
     margin-left: 2% !important;
     font-size: 50px !important;
@@ -1459,7 +1459,7 @@ body {
   }
 }
 
-/* line 1025, ../sass/classic.scss */
+/* line 1026, ../sass/classic.scss */
 .producto-nombre {
   font-family: 'Myriad Pro Bold Condensed', serif;
   font-size: 19px;
@@ -1475,12 +1475,12 @@ body {
   text-shadow: 1px 1px 1px #000000;
 }
 
-/* line 1040, ../sass/classic.scss */
+/* line 1041, ../sass/classic.scss */
 .btn-group {
   display: flex;
 }
 
-/* line 1044, ../sass/classic.scss */
+/* line 1045, ../sass/classic.scss */
 .btn-info {
   width: 40px;
   height: 40px;
@@ -1490,7 +1490,7 @@ body {
   cursor: pointer;
 }
 
-/* line 1054, ../sass/classic.scss */
+/* line 1055, ../sass/classic.scss */
 .btn-info:hover {
   width: 40px;
   height: 40px;
@@ -1500,7 +1500,7 @@ body {
   cursor: pointer;
 }
 
-/* line 1062, ../sass/classic.scss */
+/* line 1063, ../sass/classic.scss */
 .btn-info-detalle {
   background: url("../img/info_2.png") 50% 50% no-repeat;
   background-size: 90%;
@@ -1510,7 +1510,7 @@ body {
   cursor: pointer;
 }
 
-/* line 1070, ../sass/classic.scss */
+/* line 1071, ../sass/classic.scss */
 .btn-info-detalle:hover {
   background: url("../img/info_2b.png") 50% 50% no-repeat;
   background-size: 90%;
@@ -1520,7 +1520,7 @@ body {
   cursor: pointer;
 }
 
-/* line 1079, ../sass/classic.scss */
+/* line 1080, ../sass/classic.scss */
 .btn-face {
   background: url("../img/face_2.png") 50% 50% no-repeat;
   width: 40px;
@@ -1530,7 +1530,7 @@ body {
   cursor: pointer;
 }
 
-/* line 1088, ../sass/classic.scss */
+/* line 1089, ../sass/classic.scss */
 .btn-face-detalle {
   background: url("../img/face_2.png") 50% 50% no-repeat;
   background-size: 90%;
@@ -1540,7 +1540,7 @@ body {
   cursor: pointer;
 }
 
-/* line 1096, ../sass/classic.scss */
+/* line 1097, ../sass/classic.scss */
 .btn-comprar-detalle {
   background: url("../img/boton-oferta.png") 50% 50% no-repeat;
   width: 134px;
@@ -1551,14 +1551,14 @@ body {
   color: #ffffff;
 }
 
-/* line 1105, ../sass/classic.scss */
+/* line 1106, ../sass/classic.scss */
 .btn-comprar {
   margin-left: 5px;
   height: 40px;
   width: 90px;
   background: url("../img/boton.png") 50% 50% no-repeat;
 }
-/* line 1113, ../sass/classic.scss */
+/* line 1114, ../sass/classic.scss */
 .btn-comprar button {
   font-family: 'Myriad Pro Bold Condensed', serif;
   text-align: right;
@@ -1571,7 +1571,7 @@ body {
   margin-top: 7px;
   padding-right: 35px;
 }
-/* line 1126, ../sass/classic.scss */
+/* line 1127, ../sass/classic.scss */
 .btn-comprar button span {
   font-size: 20px;
   color: red;
@@ -1579,25 +1579,25 @@ body {
   margin-bottom: -5px;
 }
 
-/* line 1136, ../sass/classic.scss */
+/* line 1137, ../sass/classic.scss */
 .outer-center {
   float: right;
   right: 50%;
   position: relative;
 }
 
-/* line 1143, ../sass/classic.scss */
+/* line 1144, ../sass/classic.scss */
 .inner-center {
   float: right;
   right: -50%;
   position: relative;
 }
 
-/* line 1150, ../sass/classic.scss */
+/* line 1151, ../sass/classic.scss */
 .search-box {
   display: flex;
 }
-/* line 1153, ../sass/classic.scss */
+/* line 1154, ../sass/classic.scss */
 .search-box span {
   line-height: 50px;
   font-size: 38px;
@@ -1606,13 +1606,13 @@ body {
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.48);
 }
 @media (max-width: 799px) {
-  /* line 1153, ../sass/classic.scss */
+  /* line 1154, ../sass/classic.scss */
   .search-box span {
     opacity: 0;
     position: absolute;
   }
 }
-/* line 1165, ../sass/classic.scss */
+/* line 1166, ../sass/classic.scss */
 .search-box input {
   margin-left: 5px;
   vertical-align: top;
@@ -1630,36 +1630,36 @@ body {
   font-weight: 100;
 }
 @media (min-width: 800px) {
-  /* line 1165, ../sass/classic.scss */
+  /* line 1166, ../sass/classic.scss */
   .search-box input {
     min-width: 520px;
   }
 }
 @media (max-width: 799px) {
-  /* line 1165, ../sass/classic.scss */
+  /* line 1166, ../sass/classic.scss */
   .search-box input {
     min-width: 480px;
   }
 }
 @media (max-width: 500px) {
-  /* line 1165, ../sass/classic.scss */
+  /* line 1166, ../sass/classic.scss */
   .search-box input {
     width: 400px;
     min-width: 400px;
   }
 }
 @media (max-width: 360px) {
-  /* line 1165, ../sass/classic.scss */
+  /* line 1166, ../sass/classic.scss */
   .search-box input {
     width: 340px;
     min-width: 340px;
   }
 }
-/* line 1202, ../sass/classic.scss */
+/* line 1203, ../sass/classic.scss */
 .search-box input:focus {
   outline: none;
 }
-/* line 1205, ../sass/classic.scss */
+/* line 1206, ../sass/classic.scss */
 .search-box .clear {
   position: absolute;
   color: #999999;
@@ -1675,7 +1675,7 @@ body {
   text-align: center;
 }
 
-/* line 1222, ../sass/classic.scss */
+/* line 1223, ../sass/classic.scss */
 .title-results {
   position: absolute;
   text-align: center;
@@ -1688,18 +1688,18 @@ body {
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.75);
 }
 @media (max-width: 600px) {
-  /* line 1222, ../sass/classic.scss */
+  /* line 1223, ../sass/classic.scss */
   .title-results {
     margin-left: 0%;
   }
 }
 
-/* line 1238, ../sass/classic.scss */
+/* line 1239, ../sass/classic.scss */
 .search-results-container {
   margin-top: 150px;
 }
 
-/* line 1243, ../sass/classic.scss */
+/* line 1244, ../sass/classic.scss */
 #ac-angular-carrito-snipet span {
   white-space: nowrap;
   -webkit-transition: all 0.4s;
@@ -1711,24 +1711,24 @@ body {
   width: 100%;
 }
 
-/* line 1256, ../sass/classic.scss */
+/* line 1257, ../sass/classic.scss */
 .ac-snipet-total-modified {
   transform: scale(1.2, 1.2);
 }
 
-/* line 1260, ../sass/classic.scss */
+/* line 1261, ../sass/classic.scss */
 #search-results, #item-detail {
   height: 1400px;
   width: 810px;
 }
 @media (max-width: 600px) {
-  /* line 1260, ../sass/classic.scss */
+  /* line 1261, ../sass/classic.scss */
   #search-results, #item-detail {
     width: 480px;
   }
 }
 
-/* line 1287, ../sass/classic.scss */
+/* line 1288, ../sass/classic.scss */
 #search-results.ng-enter,
 #login-form.ng-enter,
 #carrito-form.ng-enter,
@@ -1739,7 +1739,7 @@ body {
   animation: search-results-enter 1s;
 }
 
-/* line 1297, ../sass/classic.scss */
+/* line 1298, ../sass/classic.scss */
 #search-results.ng-leave,
 #login-form.ng-leave,
 #carrito-form.ng-leave,
@@ -1766,7 +1766,7 @@ body {
     transform: translate(1500px, 0);
   }
 }
-/* line 1331, ../sass/classic.scss */
+/* line 1332, ../sass/classic.scss */
 #vendidos_list.ng-enter,
 #destacados_list.ng-enter,
 #ofertas.ng-enter,
@@ -1776,7 +1776,7 @@ body {
   animation: sections-enter 1s;
 }
 
-/* line 1340, ../sass/classic.scss */
+/* line 1341, ../sass/classic.scss */
 #vendidos_list.ng-leave,
 #destacados_list.ng-leave,
 #ofertas.ng-leave,
@@ -1786,7 +1786,7 @@ body {
   animation: sections-leave 1s;
 }
 
-/* line 1350, ../sass/classic.scss */
+/* line 1351, ../sass/classic.scss */
 #medios {
   background-color: #000000;
   font-family: 'Myriad Pro Bold Condensed', serif;
@@ -1795,11 +1795,11 @@ body {
   color: #8cc63f;
   font-size: 27px;
 }
-/* line 1357, ../sass/classic.scss */
+/* line 1358, ../sass/classic.scss */
 #medios div:nth-child(2) {
   min-width: 800px;
 }
-/* line 1360, ../sass/classic.scss */
+/* line 1361, ../sass/classic.scss */
 #medios div {
   margin-top: 20px;
   flex: 1;
@@ -1807,12 +1807,12 @@ body {
   flex-wrap: nowrap;
   flex-direction: row;
 }
-/* line 1368, ../sass/classic.scss */
+/* line 1369, ../sass/classic.scss */
 #medios div img {
   margin-left: 15px;
 }
 
-/* line 1375, ../sass/classic.scss */
+/* line 1376, ../sass/classic.scss */
 #footer {
   width: 100%;
   overflow-x: auto;
@@ -1820,23 +1820,23 @@ body {
   background: #000000 url("../img/footer_01.png") 50% 50% no-repeat;
   font-family: 'Myriad Pro Bold Condensed', serif;
 }
-/* line 1382, ../sass/classic.scss */
+/* line 1383, ../sass/classic.scss */
 #footer .footer-outer {
   width: 100%;
   max-width: 800px;
 }
-/* line 1387, ../sass/classic.scss */
+/* line 1388, ../sass/classic.scss */
 #footer .footer-inner {
   width: 100%;
   max-width: 800px;
 }
-/* line 1392, ../sass/classic.scss */
+/* line 1393, ../sass/classic.scss */
 #footer .footer-container {
   max-width: 800px;
   width: 100%;
   height: 450px;
 }
-/* line 1398, ../sass/classic.scss */
+/* line 1399, ../sass/classic.scss */
 #footer #footer-lower {
   margin-top: 25px;
   height: 60%;
@@ -1846,19 +1846,19 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
 }
-/* line 1407, ../sass/classic.scss */
+/* line 1408, ../sass/classic.scss */
 #footer #footer-lower div {
   max-width: 198px;
   width: 198px;
   font-family: 'Myriad Pro Bold Condensed', serif;
 }
-/* line 1411, ../sass/classic.scss */
+/* line 1412, ../sass/classic.scss */
 #footer #footer-lower div .footer-lower-title {
   width: 100%;
   color: #8cc63f;
   font-size: 19px;
 }
-/* line 1417, ../sass/classic.scss */
+/* line 1418, ../sass/classic.scss */
 #footer #footer-lower div .footer-lower-link {
   font-family: 'Myriad Pro Condensed', serif;
   width: 100%;
@@ -1868,18 +1868,18 @@ body {
   line-height: 22px;
   cursor: pointer;
 }
-/* line 1426, ../sass/classic.scss */
+/* line 1427, ../sass/classic.scss */
 #footer #footer-lower div img {
   margin-left: 5px;
   height: 24px;
   width: 24px;
   cursor: pointer;
 }
-/* line 1435, ../sass/classic.scss */
+/* line 1436, ../sass/classic.scss */
 #footer #footer-upper {
   height: 40%;
 }
-/* line 1437, ../sass/classic.scss */
+/* line 1438, ../sass/classic.scss */
 #footer #footer-upper img {
   width: 100%;
   margin-top: 25px;
@@ -1901,7 +1901,7 @@ body {
     transform: translate(1500px, 0);
   }
 }
-/* line 1466, ../sass/classic.scss */
+/* line 1467, ../sass/classic.scss */
 .nav-button div {
   cursor: pointer;
   width: 20px;
@@ -1916,7 +1916,7 @@ body {
   transition: all 0.4s;
 }
 
-/* line 1480, ../sass/classic.scss */
+/* line 1481, ../sass/classic.scss */
 #menu-mobile {
   width: 20px;
   position: fixed;
@@ -1925,7 +1925,7 @@ body {
   top: 35px;
 }
 
-/* line 1489, ../sass/classic.scss */
+/* line 1490, ../sass/classic.scss */
 #menu-mobile-detail {
   position: fixed;
   right: 0px;
@@ -1937,13 +1937,13 @@ body {
   transform-origin: 100% 0;
 }
 
-/* line 1501, ../sass/classic.scss */
+/* line 1502, ../sass/classic.scss */
 #menu-mobile-detail.ng-enter {
   -webkit-animation: menu-mobile-detail-enter 1s;
   animation: menu-mobile-detail-enter 1s;
 }
 
-/* line 1506, ../sass/classic.scss */
+/* line 1507, ../sass/classic.scss */
 #menu-mobile-detail.ng-leave {
   -webkit-animation: menu-mobile-detail-leave 1s;
   animation: menu-mobile-detail-leave 1s;
@@ -1965,7 +1965,7 @@ body {
     transform: scale(0, 1);
   }
 }
-/* line 1534, ../sass/classic.scss */
+/* line 1535, ../sass/classic.scss */
 .cuenta-input input {
   width: 160px !important;
   height: 19px !important;

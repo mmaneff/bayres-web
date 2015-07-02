@@ -781,10 +781,10 @@ body {
     position: absolute;
     top: 0;
     @media (max-width: 800px){
-      width: 100%;
-      min-width: 100%;
+      width: 98%;
+      min-width: 98%;
       max-width: 100%;
-      margin-left: 0;
+      margin-left: 1%;
     }
 
   }
@@ -853,9 +853,10 @@ body {
       bottom: 4%;
       right: 0%;
       @media (max-width: 800px){
-        left: calc(50% - 100px);
-        text-align: center;
+        left: calc(50% - 150px);
+//        text-align: center;
         //        right: 10px;
+        width: 100%;
       }
     }
     .btn-info, .btn-face {
