@@ -20,7 +20,8 @@ body {
     min-width: 800px;
     background-color: #000000;
     color: #ffffff;
-    font-size: 16px;
+    //    font-size: 16px;
+    font-size: 1em;
     font-family: 'Myriad Pro Bold Condensed', serif;
     a {
       color: #ffae00;
@@ -34,19 +35,24 @@ body {
     background-color: #bcbcbc;
     font-family: 'Myriad Pro Condensed', serif;
     font-size: 16px;
+
+    @media (min-width: 700px) and (max-width: 1024px) {
+      font-size: 80%;
+    }
+
     .shop-menu {
       display: flex;
       span {
-//        line-height: 50px;
-//        height: 50px;
-//        margin-top: 15px;
+        //        line-height: 50px;
+        //        height: 50px;
+        //        margin-top: 15px;
         text-align: center;
         display: inline-block;
         vertical-align: middle;
         line-height: normal;
       }
 
-      #menu-spacer{
+      #menu-spacer {
 
         flex: 3;
       }
@@ -60,8 +66,20 @@ body {
         line-height: 60px;
         text-align: center;
         z-index: 101;
-        @media (max-width: 495px) {
 
+        img {
+          @media (max-width: 800px) {
+//                        height: 50px !important;
+            pointer-events: none;
+
+          }
+        }
+
+        @media (max-width: 800px) {
+          height: 50px;
+
+        }
+        @media (max-width: 495px) {
 
           margin-left: 5px !important;
         }
@@ -121,32 +139,38 @@ body {
         flex: 1;
         color: #ffffff;
 
-        img{
+        img {
           max-width: 20px;
+
         }
 
-//        #menu-detalle-bottom{
-//          background-color: #2E7445 !important;
-//          margin-left: 0px;
-//          margin-right: 0px;
-//          width: 100%;
-//        }
+        .detalle-compras {
+          //          background-color: blue;
+          //          display: inline-block;
 
+        }
+        //        #menu-detalle-bottom{
+        //          background-color: #2E7445 !important;
+        //          margin-left: 0px;
+        //          margin-right: 0px;
+        //          width: 100%;
+        //        }
 
         div {
-          height: 25px;
-                  ac-angular-carrito{
 
-//                    background-color: #2E7445;
-                    max-width: 25px !important;
-                    width: 25px !important;
-                    #ac-angular-carrito-snipet{
-                      max-width: 25px;
-                      div{
-                        max-width: 25px !important;
-                      }
-                    }
-                  }
+          height: 25px;
+          ac-angular-carrito {
+
+            //                    background-color: #2E7445;
+            max-width: 25px !important;
+            width: 25px !important;
+            #ac-angular-carrito-snipet {
+              max-width: 25px;
+              div {
+                max-width: 25px !important;
+              }
+            }
+          }
         }
       }
 
@@ -164,10 +188,24 @@ body {
   }
 }
 
+#menu-mobile-detail {
+  display: flex;
+  justify-content: space-around;
+  color: #ffffff;
+  align-items: center;
+  div {
+    //    background-color: #00fefe;
+    margin-top: 20px;
+    height: 40px;
+    width: 100px;
+    z-index: 300 !important;
+  }
+}
+
 #sucursales {
   //  position: absolute;
   height: 600px;
-//  overflow: hidden;
+  //  overflow: hidden;
   top: 75px;
   right: 0px;
   left: 0px;
@@ -198,18 +236,18 @@ body {
   }
 
   #sucursales-01 {
-    @media (max-width: 500px){
+    @media (max-width: 500px) {
       background: url("../img/sucursales_01M.png") 50% 50% no-repeat;
 
     }
 
-    @media (min-width: 501px){
+    @media (min-width: 501px) {
       background: url("../img/sucursales_01.png") 50% 50% no-repeat;
 
     }
   }
   #sucursales-02 {
-    @media (min-width: 501px){
+    @media (min-width: 501px) {
       background: url("../img/sucursales_02.png") 50% 50% no-repeat;
     }
   }
@@ -313,7 +351,7 @@ body {
   right: 0px;
   left: 0px;
   z-index: 30;
-//  background-color: darkslategrey;
+  //  background-color: darkslategrey;
   #destacados_04,
   #destacados_03,
   #destacados_02,
@@ -426,7 +464,7 @@ body {
   #lava_01 {
     background: url("../img/lava_01.png") 50% 50% no-repeat;
     height: 700px !important;
-//    margin-top: 25px;
+    //    margin-top: 25px;
   }
 }
 

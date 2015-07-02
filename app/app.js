@@ -57,6 +57,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     vm.crearCliente = crearCliente;
     vm.ingresarCliente = ingresarCliente;
     vm.logout = logout;
+    vm.inicio = inicio;
     vm.top = 0;
     vm.top_before = 0;
     vm.debug = false;
@@ -128,6 +129,12 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         vm.sucursales = data;
         vm.sucursal = data[0];
     });
+
+    function inicio(){
+        document.getElementById("parallax").scrollTop = 0;
+        //vm.active_form = 'main';
+        $location.path('/commerce/main');
+    }
 
     function destacadosForm() {
         document.getElementById("parallax").scrollTop = 1036;
