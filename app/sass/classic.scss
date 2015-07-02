@@ -49,6 +49,10 @@ body {
   border-radius: 5px;
   border: #8CC63F 1px solid;
 
+  @media (max-width: 360px){
+    width: 340px;
+  }
+
   #login-form-container,
   #cuenta-form-container,
   #carrito-form-container,
@@ -69,6 +73,10 @@ body {
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center;
+
+    @media (max-width: 360px){
+      width: 340px;
+    }
 
     input:nth-child(1) {
       margin-top: 30px;
@@ -257,6 +265,10 @@ body {
       width: 50px;
       max-width: 50px;
       overflow: hidden;
+
+      @media (max-width: 360px){
+        font-size: 16px;
+      }
     }
 
     #ac-carrito-descr {
@@ -268,6 +280,13 @@ body {
       width: 170px;
       max-width: 170px;
       overflow: hidden;
+
+
+      @media (max-width: 360px){
+        font-size: 16px;
+        width: 100px;
+        max-width: 100px;
+      }
     }
 
     #ac-carrito-remover {
@@ -286,6 +305,10 @@ body {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
+      @media (max-width: 360px){
+        width: 340px !important;
+        margin-left: 50px;
+      }
     }
 
     #ac-carrito-productos-container {
@@ -304,6 +327,7 @@ body {
       font-size: 54px;
       font-family: 'Myriad Pro Bold Condensed', serif;
       text-align: center;
+
     }
     #ac-carrito-total:before {
       content: 'Total: ';
@@ -321,6 +345,13 @@ body {
 //        width: 100%;
         width: 200px;
         margin-left: 5px;
+      }
+
+      div{
+        @media (max-width: 360px) {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
 
@@ -503,6 +534,14 @@ body {
   margin-left: calc(50% - 400px);
   min-width: 800px;
   margin-top: 80px;
+
+
+  @media (max-width: 360px){
+    width: 340px;
+    min-width: 340px;
+    max-width: 340px;
+    margin-left: 0;
+  }
   //  background-color: #ffffff;
   //  @media (max-width: 799px) {
   //    left: 50%;
@@ -1124,6 +1163,11 @@ body {
     @media (max-width: 500px) {
       width: 400px;
       min-width: 400px;
+    }
+
+    @media (max-width: 360px) {
+      width: 340px;
+      min-width: 340px;
     }
   }
 
