@@ -1500,13 +1500,13 @@ body {
 }
 
 #menu-mobile-detail.ng-enter {
-  -webkit-animation: menu-mobile-detail-enter 1s;
-  animation: menu-mobile-detail-enter 1s;
+  -webkit-animation: menu-mobile-detail-enter 0.3s;
+  animation: menu-mobile-detail-enter 0.3s;
 }
 
 #menu-mobile-detail.ng-leave {
-  -webkit-animation: menu-mobile-detail-leave 1s;
-  animation: menu-mobile-detail-leave 1s;
+  -webkit-animation: menu-mobile-detail-leave 0.3s;
+  animation: menu-mobile-detail-leave 0.3s;
 }
 
 @-webkit-keyframes menu-mobile-detail-enter {
