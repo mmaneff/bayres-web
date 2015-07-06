@@ -75,9 +75,11 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     vm.destacadosForm = destacadosForm;
     vm.sucursalesForm = sucursalesForm;
     vm.ofertasForm = ofertasForm;
+    vm.contacto = contacto;
     vm.detalles = [];
     vm.pass_old = '';
     vm.pass_new = '';
+    vm.sucursal_contacto = 1;
 
     //Manejo de errores
     vm.message_error = '';
@@ -129,6 +131,13 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         vm.sucursales = data;
         vm.sucursal = data[0];
     });
+
+    function contacto(sucursal_id){
+        vm.sucursal_contacto = sucursal_id;
+        document.getElementById("parallax").scrollTop = 0;
+        //vm.active_form = 'main';
+        $location.path('/commerce/contact');
+    }
 
     function inicio(){
         document.getElementById("parallax").scrollTop = 0;

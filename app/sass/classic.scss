@@ -11,6 +11,61 @@ body {
   //  width: 200px !important;
 }
 
+#contacto-sucursal-01,
+#contacto-sucursal-02,
+#contacto-sucursal-03
+{
+//  background-color: orange;
+  position: absolute;
+  width: 200px;
+  height: 120px;
+  left: calc(50% - 100px);
+}
+
+#contacto-sucursal-01{
+  top: 350px;
+}
+
+#contacto-sucursal-02{
+  top: 180px;
+}
+
+#contacto-sucursal-03{
+  top: 30px;
+}
+
+#contact-detail {
+  width: 98%;
+  margin-left: 1%;
+  max-width: 800px;
+  height: 500px;
+
+  position: absolute;
+  top: 20px;
+
+
+  background : #000000;
+  background : rgba(0, 0, 0, 1);
+  opacity : 0.67;
+  border-radius : 12px;
+  -moz-border-radius : 12px;
+  -webkit-border-radius : 12px;
+  filter: alpha(opacity=67) progid:DXImageTransform.Microsoft.Alpha(opacity=67) ;
+
+}
+
+#contact-detail.ng-leave {
+  -webkit-animation: search-results-leave 1s;
+  -o-animation: search-results-leave 1s;
+  animation: search-results-leave 1s;
+}
+
+#contact-detail.ng-enter {
+  -webkit-animation: search-results-enter 1s;
+  -o-animation: search-results-enter 1s;
+  animation: search-results-enter 1s;
+}
+
 #destacados_list, .title-destacado {
   top: 0px;
 
@@ -38,7 +93,6 @@ body {
   }
 }
 
-
 #login-form,
 #cuenta-form,
 #carrito-form {
@@ -49,7 +103,7 @@ body {
   border-radius: 5px;
   border: #8CC63F 1px solid;
 
-  @media (max-width: 360px){
+  @media (max-width: 360px) {
     width: 340px;
   }
 
@@ -74,7 +128,7 @@ body {
     -webkit-justify-content: center;
     justify-content: center;
 
-    @media (max-width: 360px){
+    @media (max-width: 360px) {
       width: 340px;
     }
 
@@ -116,24 +170,24 @@ body {
       border-radius: 5px;
       margin: 5px;
     }*/
-    .cliente-form-container{
+    .cliente-form-container {
       width: 60%;
-      background-color: rgba(0,0,0,0.5);
-      float:left;
-      margin:5px;
+      background-color: rgba(0, 0, 0, 0.5);
+      float: left;
+      margin: 5px;
       padding: 10px;
     }
-    .password-form-container{
+    .password-form-container {
       width: 31%;
-      background-color: rgba(0,0,0,0.5);
-      float:left;
-      margin:5px;
+      background-color: rgba(0, 0, 0, 0.5);
+      float: left;
+      margin: 5px;
       padding: 10px;
     }
-    .historial-pedidos-form-container{
+    .historial-pedidos-form-container {
       width: 650px;
-      background-color: rgba(0,0,0,0.5);
-      margin:5px;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 5px;
       padding: 10px;
 
       span {
@@ -149,20 +203,20 @@ body {
     .title-mi-cuenta {
       //font-weight: bold;
       font-size: 24px;
-      color:#68A52F;
+      color: #68A52F;
       margin-left: 5px;
     }
-    .flexcontainer{
+    .flexcontainer {
       display: -webkit-flex;
       display: flex;
     }
-    .cuenta-subtotal{
+    .cuenta-subtotal {
       //font-weight:bold;
-      font-size:32px;
-      color:#fff;
+      font-size: 32px;
+      color: #fff;
     }
 
-    .row-1{
+    .row-1 {
       -webkit-flex: 1;
       flex: 1;
     }
@@ -170,19 +224,19 @@ body {
       -webkit-flex: 2;
       flex: 2;
     }
-    .row-3{
+    .row-3 {
       -webkit-flex: 3;
       flex: 3;
 
       .cuenta-controls {
-        label{
-          font-size:20px;
-          color:#fff;
-          margin-left:10px;
+        label {
+          font-size: 20px;
+          color: #fff;
+          margin-left: 10px;
         }
-        input{
-          width:140px !important;
-          height:20px;
+        input {
+          width: 140px !important;
+          height: 20px;
         }
       }
     }
@@ -206,18 +260,18 @@ body {
       //  width: 50%;
       //  float: left;
       //}
-      .producto-titulo{
+      .producto-titulo {
         width: 40%;
-        float:left;
+        float: left;
         color: #68A52F;
         text-align: center;
       }
-      .producto-titulo-2{
+      .producto-titulo-2 {
         //width: 14%;
         text-align: center;
         margin: auto 30px;
       }
-      .producto-nombre-2{
+      .producto-nombre-2 {
         width: 40%;
         float: left;
         text-align: center;
@@ -226,7 +280,7 @@ body {
         margin: auto;
       }
       .producto-cantidad,
-      .producto-precio{
+      .producto-precio {
         background-color: #fff;
         width: 10%;
         float: left;
@@ -266,7 +320,7 @@ body {
       max-width: 50px;
       overflow: hidden;
 
-      @media (max-width: 360px){
+      @media (max-width: 360px) {
         font-size: 16px;
       }
     }
@@ -281,8 +335,7 @@ body {
       max-width: 170px;
       overflow: hidden;
 
-
-      @media (max-width: 360px){
+      @media (max-width: 360px) {
         font-size: 16px;
         width: 100px;
         max-width: 100px;
@@ -305,7 +358,7 @@ body {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      @media (max-width: 360px){
+      @media (max-width: 360px) {
         width: 340px !important;
         margin-left: 50px;
       }
@@ -347,7 +400,7 @@ body {
         margin-left: 5px;
       }
 
-      div{
+      div {
         @media (max-width: 360px) {
           display: flex;
           flex-direction: column;
@@ -417,9 +470,9 @@ body {
 
 #producto_detail {
   position: absolute;
-  width: 690px;
+  width: 100%;
   //margin-left: calc(50% - 345px);
-  max-width: 690px;
+  max-width: 810px;
   min-width: 480px;
   max-height: 377px;
   margin-top: 0px;
@@ -436,7 +489,7 @@ body {
     overflow: hidden;
     //background: #105cb6;
     width: 550px;
-    margin-left:0%;
+    margin-left: 0%;
   }
 
   @media (max-width: 600px) {
@@ -484,9 +537,9 @@ body {
     .btn-group {
       .spacer {
         //width: 70%;
-        width:275px;
+        width: 275px;
       }
-      .btn-comprar-position{
+      .btn-comprar-position {
         margin-top: 12px;
         text-align: right;
         margin-right: 32px;
@@ -508,8 +561,8 @@ body {
     margin-bottom: 10px;
 
     font-family: 'MyriadProLight', Tahoma;
-    font-weight:normal;
-    font-style:normal;
+    font-weight: normal;
+    font-style: normal;
     font-size: 0.9em;
 
     @media (max-width: 800px) {
@@ -532,7 +585,7 @@ body {
       width: 221px;
       min-height: 221px;
       //margin-left: 2px;
-      margin:10px;
+      margin: 10px;
     }
 
     div {
@@ -548,7 +601,7 @@ body {
       img {
         width: 130px;
         min-height: 170px;
-        margin:10px;
+        margin: 10px;
       }
 
       div {
@@ -566,7 +619,7 @@ body {
       img {
         width: 100px;
         min-height: 120px;
-        margin:10px;
+        margin: 10px;
       }
 
       div {
@@ -595,8 +648,7 @@ body {
   min-width: 800px;
   margin-top: 80px;
 
-
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     width: 100%;
     min-width: 100%;
     max-width: 100%;
@@ -822,7 +874,7 @@ body {
     height: 398px;
     position: absolute;
     top: 0;
-    @media (max-width: 800px){
+    @media (max-width: 800px) {
       width: 98%;
       min-width: 98%;
       max-width: 100%;
@@ -846,7 +898,7 @@ body {
       //height: 390px;
       margin: 10px;
       height: 90%;
-      @media (max-width: 800px){
+      @media (max-width: 800px) {
         width: 92%;
         text-align: center;
         //        right: 10px;
@@ -869,7 +921,7 @@ body {
       top: 1%;
       white-space: nowrap;
 
-      @media (max-width: 800px){
+      @media (max-width: 800px) {
         left: calc(50% - 100px);
         text-align: center;
         //        right: 10px;
@@ -884,7 +936,7 @@ body {
       font-family: 'Myriad Pro Condensed', serif;
       color: #ffffff;
       font-size: 20px;
-      @media (max-width: 800px){
+      @media (max-width: 800px) {
         left: calc(50% - 175px);
         text-align: center;
         //        right: 10px;
@@ -894,7 +946,7 @@ body {
       position: absolute;
       bottom: 4%;
       right: 0%;
-      @media (max-width: 800px){
+      @media (max-width: 800px) {
         left: calc(50% - 150px);
         //        text-align: center;
         //        right: 10px;
@@ -915,8 +967,8 @@ body {
       text-shadow: 0px 0px 2px #111111;
       color: #ffffff;
 
-      .btn-comprar-position{
-        margin-top:10px;
+      .btn-comprar-position {
+        margin-top: 10px;
         text-align: right;
         margin-right: 40px;
       }
@@ -1002,10 +1054,28 @@ body {
   height: 400px;
   overflow-x: auto;
   overflow-y: hidden;
-  display: flex;
-  align-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
+  //  display: flex;
+  //  align-content: space-between;
+  //  flex-direction: row;
+  //  flex-wrap: wrap;
+
+  .destacado-inner-list,
+  .vendidos-inner-list {
+    display: flex;
+    align-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 800px;
+    min-width: 800px;
+    @media (max-width: 600px) {
+      margin-left: 0%;
+      //      flex-wrap: nowrap;
+      //    height: 220px;
+      //      width: 800px;
+      overflow-y: hidden;
+    }
+  }
+
   @media (max-width: 800px) {
     margin-left: 90px;
     overflow-y: auto;
@@ -1014,9 +1084,15 @@ body {
   @media (max-width: 600px) {
     margin-left: 0%;
     flex-wrap: nowrap;
-    height: 220px;
+    //    height: 220px;
     width: 100%;
     overflow-y: hidden;
+  }
+
+  @media (max-width: 360px) {
+    min-width: 350px;
+    max-width: 350px;
+    width: 350px;
   }
 
   .outline {
@@ -1094,6 +1170,7 @@ body {
   margin-top: -2px;
   cursor: pointer;
 }
+
 .btn-info:hover {
   width: 40px;
   height: 40px;
@@ -1102,6 +1179,7 @@ body {
   margin-top: -2px;
   cursor: pointer;
 }
+
 .btn-info-detalle {
   background: url("../img/info_2.png") 50% 50% no-repeat;
   background-size: 90%;
@@ -1110,6 +1188,7 @@ body {
   height: 57px;
   cursor: pointer;
 }
+
 .btn-info-detalle:hover {
   background: url("../img/info_2b.png") 50% 50% no-repeat;
   background-size: 90%;
@@ -1128,6 +1207,7 @@ body {
   margin-top: -2px;
   cursor: pointer;
 }
+
 .btn-face-detalle {
   background: url("../img/face_2.png") 50% 50% no-repeat;
   background-size: 90%;
@@ -1136,6 +1216,7 @@ body {
   height: 57px;
   cursor: pointer;
 }
+
 .btn-comprar-detalle {
   background: url("../img/boton-oferta.png") 50% 50% no-repeat;
   width: 134px;
@@ -1145,6 +1226,7 @@ body {
   text-shadow: 0px 0px 2px #111111;
   color: #ffffff;
 }
+
 .btn-comprar {
   //  margin-left: 26px;
   margin-left: 5px;
@@ -1266,7 +1348,7 @@ body {
   position: absolute;
   text-align: center;
   width: 80%;
-  min-width: 480px;
+  min-width: 360px;
   margin-left: 10%;
   margin-top: -80px;
   color: white;
@@ -1275,7 +1357,7 @@ body {
   @media (max-width: 600px) {
     margin-left: 0%;
   }
-  @media (max-width: 360px){
+  @media (max-width: 360px) {
     margin-left: 0%;
   }
 }
@@ -1327,8 +1409,7 @@ body {
   //  transition: all 10s;
 }
 
-
-#carrito-form.ng-enter{
+#carrito-form.ng-enter {
   //  margin-top: -370px;
   //  position: absolute;
 }

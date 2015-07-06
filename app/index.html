@@ -84,7 +84,7 @@
                 </div>
 
                 <div
-                     id="menu-mobile-detail" ng-if="mainCtrl.menu_mobile && mainCtrl.menu_mobile_open">
+                        id="menu-mobile-detail" ng-if="mainCtrl.menu_mobile && mainCtrl.menu_mobile_open">
 
                     <div ng-click="mainCtrl.inicio();">Inicio</div>
                     <div ng-click="mainCtrl.comprar();">Mi Carrito</div>
@@ -106,6 +106,13 @@
         <div id="sucursales-03" class="parallax__layer parallax__layer--deeper-3"></div>
         <div id="sucursales-02" class="parallax__layer parallax__layer--deeper-2"></div>
         <div id="sucursales-01" class="parallax__layer "></div>
+        <div id="contacto-sucursal-03" ng-click="mainCtrl.contacto(3);"></div>
+        <div id="contacto-sucursal-02" ng-click="mainCtrl.contacto(2);"></div>
+        <div id="contacto-sucursal-01" ng-click="mainCtrl.contacto(1);"></div>
+
+        <div id="contact-detail" ng-if="mainCtrl.active_form == 'contact';">
+            {{mainCtrl.sucursal_contacto}}
+        </div>
 
 
     </div>
@@ -133,7 +140,9 @@
                         <div class="outline">
                             <div class="picture_name">
                                 <!--img ng-src="./img/{{destacado.fotos[0].nombre}}" alt="{{destacado.nombre}}"/-->
-                                <img ng-src="./img/{{mainCtrl.detalle.fotos[0].nombre}}" alt="{{mainCtrl.detalle.nombre}}"/>
+                                <img ng-src="./img/{{mainCtrl.detalle.fotos[0].nombre}}"
+                                     alt="{{mainCtrl.detalle.nombre}}"/>
+
                                 <div>{{mainCtrl.detalle.nombre}}</div>
                             </div>
                             <div>
@@ -142,16 +151,17 @@
                                 </div>
                                 <div class="btn-group" style="position: absolute; right: 0%;">
                                     <!--div class="spacer"></div-->
-                                    <div  class="btn-comprar-detalle" ng-click="mainCtrl.agregarProducto(mainCtrl.detalle)">
+                                    <div class="btn-comprar-detalle"
+                                         ng-click="mainCtrl.agregarProducto(mainCtrl.detalle)">
                                         <div class="btn-comprar-position" style="margin-right:40px">
                                             <span style="color:red;">$ </span>{{mainCtrl.detalle.precios[0].precio}}
                                         </div>
                                     </div>
 
                                     <!--<div ng-if="mainCtrl.detalle.oferta_id !== -1" class="btn-comprar-detalle" ng-click="mainCtrl.agregarOferta(destacado)">-->
-                                        <!--<div class="btn-comprar-position" style="margin-right:40px">-->
-                                            <!--<span style="color:red;">$ </span>{{mainCtrl.detalle.precios[0].precio}}-->
-                                        <!--</div>-->
+                                    <!--<div class="btn-comprar-position" style="margin-right:40px">-->
+                                    <!--<span style="color:red;">$ </span>{{mainCtrl.detalle.precios[0].precio}}-->
+                                    <!--</div>-->
                                     <!--</div>-->
                                     <div class="btn-info-detalle" ng-click="mainCtrl.hideDetails();"></div>
                                     <div class="btn-face-detalle"></div>
@@ -222,7 +232,8 @@
                             </button>
                         </div>
 
-                        <div ng-if="mainCtrl.usuario_creado == '-1'" style="color:#fff;">{{mainCtrl.message_error}}</div>
+                        <div ng-if="mainCtrl.usuario_creado == '-1'" style="color:#fff;">{{mainCtrl.message_error}}
+                        </div>
                     </div>
                     <!--</div>-->
                 </div>
@@ -234,7 +245,7 @@
                     <div id="cuenta-form-container">
                         <div class="border-form-container" style="flex-direction:row;">
                             <div style="min-height:180px;">
-                                <div class="cliente-form-container" >
+                                <div class="cliente-form-container">
                                     <div style="margin-bottom:15px;">
                                         <label class="title-mi-cuenta">Modificar datos personales</label>
                                     </div>
@@ -242,64 +253,80 @@
                                         <div class="row-3">
                                             <div class="cuenta-controls">
                                                 <label for="">Apellido</label><br>
-                                                <input ng-model="mainCtrl.cliente.apellido" placeholder="Apellido" type="text" />
+                                                <input ng-model="mainCtrl.cliente.apellido" placeholder="Apellido"
+                                                       type="text"/>
                                             </div>
                                             <div class="cuenta-controls">
                                                 <label for="">Nombre</label><br>
-                                                <input ng-model="mainCtrl.cliente.nombre" placeholder="Nombre" type="text" />
+                                                <input ng-model="mainCtrl.cliente.nombre" placeholder="Nombre"
+                                                       type="text"/>
                                             </div>
                                         </div>
                                         <div class="row-3">
                                             <div class="cuenta-controls">
                                                 <label for="">Mail</label><br>
-                                                <input ng-model="mainCtrl.cliente.mail" placeholder="Mail" type="text" />
+                                                <input ng-model="mainCtrl.cliente.mail" placeholder="Mail" type="text"/>
                                             </div>
                                             <div class="cuenta-controls">
                                                 <label for="">Dirección</label><br>
-                                                <input ng-model="mainCtrl.cliente.direccion" placeholder="Dirección" type="text" />
+                                                <input ng-model="mainCtrl.cliente.direccion" placeholder="Dirección"
+                                                       type="text"/>
                                             </div>
                                         </div>
                                         <div class="row-1">
                                             <div style="margin-top:60px;">
-                                                <button ng-if="!mainCtrl.creaCliente" ng-click="mainCtrl.actualizarCliente();" style="width:40px !important;">Ok</button>
+                                                <button ng-if="!mainCtrl.creaCliente"
+                                                        ng-click="mainCtrl.actualizarCliente();"
+                                                        style="width:40px !important;">Ok
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div ng-if="mainCtrl.update_error == '1'" style="color:#fff;font-size: 14px;">{{mainCtrl.message_error}}</div>
+                                    <div ng-if="mainCtrl.update_error == '1'" style="color:#fff;font-size: 14px;">
+                                        {{mainCtrl.message_error}}
+                                    </div>
                                 </div>
                                 <div class="password-form-container">
                                     <div style="margin-bottom:15px;">
                                         <label class="title-mi-cuenta">Modificar Contraseña</label>
                                     </div>
                                     <div class="flexcontainer">
-                                <!--div style="flex:1;"-->
-                                    <!--div class="cuenta-input"-->
+                                        <!--div style="flex:1;"-->
+                                        <!--div class="cuenta-input"-->
                                         <div class="row-3">
                                             <div class="cuenta-controls">
                                                 <label for="">Contraseña vieja</label><br>
-                                                <input ng-model="mainCtrl.pass_old" placeholder="Contraseña vieja" type="password" />
+                                                <input ng-model="mainCtrl.pass_old" placeholder="Contraseña vieja"
+                                                       type="password"/>
                                             </div>
                                             <div class="cuenta-controls">
                                                 <label for="">Contraseña nueva</label><br>
-                                                <input ng-model="mainCtrl.pass_new" placeholder="Contraseña nueva" type="password" />
+                                                <input ng-model="mainCtrl.pass_new" placeholder="Contraseña nueva"
+                                                       type="password"/>
                                             </div>
                                         </div>
                                         <div class="row-1">
                                             <div style="margin-top:60px;">
-                                                <button ng-click="mainCtrl.modificarPass();" style="width:40px !important;">Ok</button>
+                                                <button ng-click="mainCtrl.modificarPass();"
+                                                        style="width:40px !important;">Ok
+                                                </button>
                                             </div>
                                         </div>
 
-                                <!--/div-->
+                                        <!--/div-->
                                     </div>
-                                    <div ng-if="mainCtrl.change_pwd_error == '1'" style="color:#fff;font-size: 14px;">{{mainCtrl.message_error}}</div>
+                                    <div ng-if="mainCtrl.change_pwd_error == '1'" style="color:#fff;font-size: 14px;">
+                                        {{mainCtrl.message_error}}
+                                    </div>
                                 </div>
                             </div>
                             <br>
+
                             <div style="margin-top: 15px;">
                                 <div class="historial-pedidos-form-container">
                                     <div class="ultimos-pedidos">
-                                        <label class="title-mi-cuenta" style="margin-right: 10px">Ultimos pedidos</label>
+                                        <label class="title-mi-cuenta" style="margin-right: 10px">Ultimos
+                                            pedidos</label>
                                         <select ng-click="mainCtrl.detalle = mainCtrl.pedido.detalles;"
                                                 ng-model="mainCtrl.pedido"
                                                 ng-options="pedido.carrito_id + ' - ' + pedido.fecha + ' - ' + pedido.total for  pedido in mainCtrl.historico_pedidos">
@@ -319,7 +346,7 @@
                                                 <span class="producto-cantidad">{{detalle.cantidad}}</span>
                                                 <span class="producto-precio">{{detalle.precio | currency}}</span>
                                                 <span class="producto-precio">{{detalle.precio * detalle.cantidad | currency}}</span>
-                                                <img src="img/cart.png" />
+                                                <img src="img/cart.png"/>
                                                 <!--input ng-model="detalle.total" ng-init="detalle.total = detalle.precio * detalle.cantidad;" type="text" readonly class="info-detalle"/-->
                                             </div>
                                         </div>
@@ -328,16 +355,21 @@
                                         <div class="flexcontainer">
                                             <div style="flex:1">
                                                 <!--button ng-click="mainCtrl.borrarCarrito();" >Borrar</button-->
-                                                <button ng-click="mainCtrl.confirmarCarrito();" >Pedilo!</button>
+                                                <button ng-click="mainCtrl.confirmarCarrito();">Pedilo!</button>
                                             </div>
                                             <div style="flex:1;margin-top:30px;">
                                                 <div style="float: right">
-                                                    <label class="cuenta-subtotal" style="margin-right: 10px">Subtotal:</label>
-                                                    <input ng-model="mainCtrl.pedido.total | currency" type="text" readonly style="width:140px !important;text-align: right;font-weight: bold;"/>
+                                                    <label class="cuenta-subtotal"
+                                                           style="margin-right: 10px">Subtotal:</label>
+                                                    <input ng-model="mainCtrl.pedido.total | currency" type="text"
+                                                           readonly
+                                                           style="width:140px !important;text-align: right;font-weight: bold;"/>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div ng-if="mainCtrl.carrito_mensaje == '1'" style="color:#fff;font-size: 14px;">{{mainCtrl.message_error}}</div>
+                                        <div ng-if="mainCtrl.carrito_mensaje == '1'"
+                                             style="color:#fff;font-size: 14px;">{{mainCtrl.message_error}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -404,7 +436,9 @@
 
                 <img ng-src="./img/{{mainCtrl.ofertas[0].imagen}}" alt="{{mainCtrl.ofertas[0].imagen}}"/>
                 <span class="oferta-titulo">{{mainCtrl.ofertas[0].titulo}}</span>
+
                 <p>{{mainCtrl.ofertas[0].descripcion}}</p>
+
                 <div class="btn-group">
                     <div class="btn-comprar" ng-click="mainCtrl.agregarOferta(mainCtrl.ofertas[0])">
                         <div class="btn-comprar-position">
@@ -418,7 +452,9 @@
             <div id="ofertas-container-02" ng-if="mainCtrl.slider_nro == 2;">
                 <img ng-src="./img/{{mainCtrl.ofertas[1].imagen}}" alt="{{mainCtrl.ofertas[1].imagen}}"/>
                 <span class="oferta-titulo">{{mainCtrl.ofertas[1].titulo}}</span>
+
                 <p>{{mainCtrl.ofertas[1].descripcion}}</p>
+
                 <div class="btn-group">
                     <div class="btn-comprar" ng-click="mainCtrl.agregarOferta(mainCtrl.ofertas[1])">
                         <div class="btn-comprar-position">
@@ -432,7 +468,9 @@
             <div id="ofertas-container-03" ng-if="mainCtrl.slider_nro == 3;">
                 <img ng-src="./img/{{mainCtrl.ofertas[2].imagen}}" alt="{{mainCtrl.ofertas[2].imagen}}"/>
                 <span class="oferta-titulo">{{mainCtrl.ofertas[2].titulo}}</span>
+
                 <p>{{mainCtrl.ofertas[2].descripcion}}</p>
+
                 <div class="btn-group">
                     <div class="btn-comprar" ng-click="mainCtrl.agregarOferta(mainCtrl.ofertas[2])">
                         <div class="btn-comprar-position">
@@ -446,7 +484,9 @@
             <div id="ofertas-container-04" ng-if="mainCtrl.slider_nro == 4;">
                 <img ng-src="./img/{{mainCtrl.ofertas[3].imagen}}" alt="{{mainCtrl.ofertas[3].imagen}}"/>
                 <span class="oferta-titulo">{{mainCtrl.ofertas[3].titulo}}</span>
+
                 <p>{{mainCtrl.ofertas[3].descripcion}}</p>
+
                 <div class="btn-group">
                     <div class="btn-comprar" ng-click="mainCtrl.agregarOferta(mainCtrl.ofertas[3])">
                         <div class="btn-comprar-position">
@@ -466,10 +506,14 @@
                  ng-click="(mainCtrl.slider_nro == 1)?mainCtrl.slider_nro=4:mainCtrl.slider_nro = mainCtrl.slider_nro - 1;">
                 >
             </div-->
-            <div class="slider_1" ng-class="{slider_selected:mainCtrl.slider_nro==1}" ng-click="mainCtrl.slider_nro=1;"></div>
-            <div class="slider_2" ng-class="{slider_selected:mainCtrl.slider_nro==2}" ng-click="mainCtrl.slider_nro=2;"></div>
-            <div class="slider_3" ng-class="{slider_selected:mainCtrl.slider_nro==3}" ng-click="mainCtrl.slider_nro=3;"></div>
-            <div class="slider_4" ng-class="{slider_selected:mainCtrl.slider_nro==4}" ng-click="mainCtrl.slider_nro=4;"></div>
+            <div class="slider_1" ng-class="{slider_selected:mainCtrl.slider_nro==1}"
+                 ng-click="mainCtrl.slider_nro=1;"></div>
+            <div class="slider_2" ng-class="{slider_selected:mainCtrl.slider_nro==2}"
+                 ng-click="mainCtrl.slider_nro=2;"></div>
+            <div class="slider_3" ng-class="{slider_selected:mainCtrl.slider_nro==3}"
+                 ng-click="mainCtrl.slider_nro=3;"></div>
+            <div class="slider_4" ng-class="{slider_selected:mainCtrl.slider_nro==4}"
+                 ng-click="mainCtrl.slider_nro=4;"></div>
         </div>
 
     </div>
@@ -488,21 +532,23 @@
         </div>
         <div id="destacados_list" ng-if="mainCtrl.active_form == 'main';"
              class="">
-            <div class="destacado" ng-repeat="destacado in mainCtrl.destacados" title="{{destacado.nombre}}">
-                <div class="outline">
-                    <div class="producto-nombre">{{destacado.nombre.toUpperCase()}}</div>
-                    <img ng-src="./img/{{destacado.fotos[0].nombre}}" alt="{{destacado.nombre}}"/>
+            <div class="destacado-inner-list">
+                <div class="destacado" ng-repeat="destacado in mainCtrl.destacados" title="{{destacado.nombre}}">
+                    <div class="outline">
+                        <div class="producto-nombre">{{destacado.nombre.toUpperCase()}}</div>
+                        <img ng-src="./img/{{destacado.fotos[0].nombre}}" alt="{{destacado.nombre}}"/>
 
-                    <div class="btn-group">
+                        <div class="btn-group">
 
-                        <div class="btn-comprar">
-                            <button ng-click="mainCtrl.agregarProducto(destacado)">
-                                <!--<img src="./img/boton.png" alt=""/>-->
-                                <span>$</span>{{destacado.precios[0].precio}}
-                            </button>
+                            <div class="btn-comprar">
+                                <button ng-click="mainCtrl.agregarProducto(destacado)">
+                                    <!--<img src="./img/boton.png" alt=""/>-->
+                                    <span>$</span>{{destacado.precios[0].precio}}
+                                </button>
+                            </div>
+                            <div class="btn-info" ng-click="mainCtrl.showDetails(destacado);"></div>
+                            <div class="btn-face"></div>
                         </div>
-                        <div class="btn-info" ng-click="mainCtrl.showDetails(destacado);"></div>
-                        <div class="btn-face"></div>
                     </div>
                 </div>
             </div>
@@ -521,21 +567,23 @@
         <div class="title parallax__layer parallax__layer--base" ng-if="mainCtrl.active_form == 'main';">+VENDIDOS
         </div>
         <div id="vendidos_list" ng-if="mainCtrl.active_form == 'main';">
-            <div class="destacado" ng-repeat="destacado in mainCtrl.vendidos" title="{{destacado.nombre}}">
-                <div class="outline">
-                    <div class="producto-nombre">{{destacado.nombre.toUpperCase()}}</div>
-                    <img ng-src="./img/{{destacado.fotos[0].nombre}}" alt="{{destacado.nombre}}"/>
+            <div class="vendidos-inner-list">
+                <div class="destacado" ng-repeat="destacado in mainCtrl.vendidos" title="{{destacado.nombre}}">
+                    <div class="outline">
+                        <div class="producto-nombre">{{destacado.nombre.toUpperCase()}}</div>
+                        <img ng-src="./img/{{destacado.fotos[0].nombre}}" alt="{{destacado.nombre}}"/>
 
-                    <div class="btn-group">
+                        <div class="btn-group">
 
-                        <div class="btn-comprar">
-                            <button ng-click="mainCtrl.agregarProducto(destacado)">
-                                <!--<img src="./img/boton.png" alt=""/>-->
-                                <span>$</span>{{destacado.precios[0].precio}}
-                            </button>
+                            <div class="btn-comprar">
+                                <button ng-click="mainCtrl.agregarProducto(destacado)">
+                                    <!--<img src="./img/boton.png" alt=""/>-->
+                                    <span>$</span>{{destacado.precios[0].precio}}
+                                </button>
+                            </div>
+                            <div class="btn-info" ng-click="mainCtrl.showDetails(destacado);"></div>
+                            <div class="btn-face"></div>
                         </div>
-                        <div class="btn-info" ng-click="mainCtrl.showDetails(destacado);"></div>
-                        <div class="btn-face"></div>
                     </div>
                 </div>
             </div>
@@ -545,7 +593,7 @@
         <div></div>
         <div style="justify-content:center;">
             <span>MEDIOS DE PAGO:</span>
-            <img src="img/medio_01.png" alt="" />
+            <img src="img/medio_01.png" alt=""/>
             <img src="img/medio_02.png" alt=""/>
             <img src="img/medio_03.png" alt=""/>
             <img src="img/medio_04.png" alt=""/>
@@ -573,8 +621,10 @@
                         <div>
                             <div class="footer-lower-title">REGISTRO</div>
                             <br/>
-                            <a class="footer-lower-link" ng-click="mainCtrl.ingresarCliente();" href="">INGRESAR</a><br/>
-                            <a class="footer-lower-link" ng-click="mainCtrl.crearCliente();" href="">REGISTRARSE</a><br/>
+                            <a class="footer-lower-link" ng-click="mainCtrl.ingresarCliente();"
+                               href="">INGRESAR</a><br/>
+                            <a class="footer-lower-link" ng-click="mainCtrl.crearCliente();"
+                               href="">REGISTRARSE</a><br/>
                         </div>
                         <div>
                             <div class="footer-lower-title">CARRITO</div>

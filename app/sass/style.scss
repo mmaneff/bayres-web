@@ -257,7 +257,14 @@ body {
   #sucursales-01 {
     @media (max-width: 500px) {
       background: url("../img/sucursales_01M.png") 50% 50% no-repeat;
-
+//      image-rendering: optimizeSpeed;             /*                     */
+//      image-rendering: -moz-crisp-edges;          /* Firefox             */
+//      image-rendering: -o-crisp-edges;            /* Opera               */
+      image-rendering: pixelated; /* Chrome (and Safari) */
+//      image-rendering: crisp-edges; /* Chrome (and Safari) */
+//      image-rendering: -webkit-pixelated;
+//      image-rendering: optimize-contrast;         /* CSS3 Proposed       */
+//      -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
     }
 
     @media (min-width: 501px) {
