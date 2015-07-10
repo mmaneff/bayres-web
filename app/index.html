@@ -52,7 +52,7 @@
                 </div>
 
                 <div ng-if="!mainCtrl.menu_mobile" id="menu-spacer"></div>
-                <div ng-if="!mainCtrl.menu_mobile" id="menu-home" ng-click="mainCtrl.destacadosForm();">
+                <div ng-if="!mainCtrl.menu_mobile" id="menu-home" ng-click="mainCtrl.inicio();">
                     <div><img src="img/home.png" alt="compras"/></div>
                 </div>
                 <div ng-if="!mainCtrl.menu_mobile" id="menu-carrito" ng-click="mainCtrl.comprar();">
@@ -109,9 +109,83 @@
         <div id="contacto-sucursal-03" ng-click="mainCtrl.contacto(3);"></div>
         <div id="contacto-sucursal-02" ng-click="mainCtrl.contacto(2);"></div>
         <div id="contacto-sucursal-01" ng-click="mainCtrl.contacto(1);"></div>
+        <div id="mapa-sucursal-03" ng-click="mainCtrl.mapa(3);"></div>
+        <div id="mapa-sucursal-02" ng-click="mainCtrl.mapa(2);"></div>
+        <div id="mapa-sucursal-01" ng-click="mainCtrl.mapa(1);"></div>
 
-        <div id="contact-detail" ng-if="mainCtrl.active_form == 'contact';">
-            {{mainCtrl.sucursal_contacto}}
+        <div id="contact-detail" ng-if="mainCtrl.active_form == 'contact';" class="outer-center">
+            <div class="contenedor inner-center">
+                <div class="lineacontornoverde">
+
+                    <div class="rectangulogrisoscuro">
+
+                        <P class="Contacto">CONTACTO</P>
+
+
+
+                        <div class="contenedor-inner-contacto-mapa">
+
+                            <div class="column">
+                                <P class="Nombre">Nombre:
+                                </P>
+                                <input type="text" class="input1"/>
+
+                                <P class="Apellido">Apellido:
+                                </P>
+                                <input type="text" class="input2"/>
+                            </div>
+                            <div class="column">
+                                <P class="Email">E-mail:
+                                </P>
+                                <input type="text" class="input3"/>
+
+                                <P class="Consulta">Consulta:
+                                </P>
+                                <input type="text" class="input4"/>
+
+
+                                <div class="boton"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mapa-detail" ng-if="mainCtrl.active_form == 'mapa';"  class="outer-center">
+            <div class="contenedor inner-center">
+                <div class="lineacontornoverde">
+
+                    <div class="rectangulogrisoscuro">
+
+                        <P class="Contacto">CONTACTO</P>
+
+                        <P class="Nombre">Nombre:
+
+                        <div class="input1" contenteditable="true"></div>
+                        </P>
+
+                        <P class="Apellido">Apellido:
+
+                        <div class="input2" contenteditable="true"></div>
+                        </P>
+
+                        <P class="Email">E-mail:
+
+                        <div class="input3" contenteditable="true"></div>
+                        </P>
+
+
+                        <P class="Consulta">Consulta:
+
+                        <div class="input4" contenteditable="true"></div>
+                        </P>
+
+
+                        <div class="boton"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 

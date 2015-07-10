@@ -38,7 +38,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     vm.cliente = {};
 
     //vm.active_form = 'main';
-    vm.active_form =($routeParams.parameter === undefined)?'main':$routeParams.parameter;
+    vm.active_form = ($routeParams.parameter === undefined) ? 'main' : $routeParams.parameter;
     vm.active_form_before = '';
 
     vm.addProducto = addProducto;
@@ -76,6 +76,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     vm.sucursalesForm = sucursalesForm;
     vm.ofertasForm = ofertasForm;
     vm.contacto = contacto;
+    vm.mapa = mapa;
     vm.detalles = [];
     vm.pass_old = '';
     vm.pass_new = '';
@@ -90,12 +91,65 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     vm.menu_mobile = false;
     vm.menu_mobile_open = false;
 
+
+    vm.scrollTo = scrollTo;
+
+
+    var pos_origin = 0;
+    function scrollTo(pos) {
+
+        //var cantidad = pos;
+        var timer = 0;
+        var speed = 20;
+
+        var is_end = false;
+        var pos_actual = document.getElementById('parallax').scrollTop;
+        var pos_next = pos_actual + (pos / 25);
+
+
+        if (pos_origin == 0){
+            pos_origin = pos_actual;
+        }
+
+        if((pos_actual<pos && pos_next > pos) ||
+            (pos_actual>pos && pos_next < pos)){
+
+            is_end = true;
+            pos_origin = 0;
+        }
+
+
+
+        //for(var i = 0; i<cantidad/8; i++){
+        if (document.getElementById('parallax').scrollTop != pos) {
+            setTimeout(function () {
+                    //console.log(document.getElementById('parallax').scrollTop);
+
+                if(pos < document.getElementById('parallax').scrollTop){
+
+                    document.getElementById('parallax').scrollTop -= pos_origin / 25;
+
+                }else{
+                    document.getElementById('parallax').scrollTop += pos / 25;
+
+                }
+                //console.log(document.getElementById('parallax').scrollTop);
+                //timer += 1;
+                if(!is_end){
+                    vm.scrollTo(pos);
+                }
+            }, 10);
+
+        }
+    }
+
+
     //console.log(window.innerWidth);
 
-    $scope.$on('$routeChangeSuccess', function(next, current) {
+    $scope.$on('$routeChangeSuccess', function (next, current) {
         //console.log($routeParams);
 
-        vm.active_form =($routeParams.parameter === undefined)?'main':$routeParams.parameter;
+        vm.active_form = ($routeParams.parameter === undefined) ? 'main' : $routeParams.parameter;
         //vm.active_form =(next === undefined)?'main':next;
     });
 
@@ -132,40 +186,54 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         vm.sucursal = data[0];
     });
 
-    function contacto(sucursal_id){
+    function contacto(sucursal_id) {
         vm.sucursal_contacto = sucursal_id;
-        document.getElementById("parallax").scrollTop = 0;
+        scrollTo(0);
+        //document.getElementById("parallax").scrollTop = 0;
         //vm.active_form = 'main';
         $location.path('/commerce/contact');
     }
 
-    function inicio(){
-        document.getElementById("parallax").scrollTop = 0;
+    function mapa(sucursal_id) {
+        vm.sucursal_contacto = sucursal_id;
+        scrollTo(0);
+        //document.getElementById("parallax").scrollTop = 0;
+        //vm.active_form = 'main';
+        $location.path('/commerce/mapa');
+    }
+
+    function inicio() {
+        scrollTo(0);
+        //document.getElementById("parallax").scrollTop = 0;
         //vm.active_form = 'main';
         $location.path('/commerce/main');
     }
 
     function destacadosForm() {
-        document.getElementById("parallax").scrollTop = 1036;
+        scrollTo(1036);
+        //document.getElementById("parallax").scrollTop = 1036;
         //vm.active_form = 'main';
         $location.path('/commerce/main');
     }
 
     function masVendidosForm() {
-        document.getElementById("parallax").scrollTop = 1536;
+        scrollTo(1536);
+        //document.getElementById("parallax").scrollTop = 1536;
         //vm.active_form = 'main';
         $location.path('/commerce/main');
     }
 
     function sucursalesForm() {
-        document.getElementById("parallax").scrollTop = 0;
+        scrollTo(0);
+        //document.getElementById("parallax").scrollTop = 0;
         //vm.active_form = 'main';
         $location.path('/commerce/main');
     }
 
 
     function ofertasForm() {
-        document.getElementById("parallax").scrollTop = 636;
+        scrollTo(636);
+        //document.getElementById("parallax").scrollTop = 636;
         //vm.active_form = 'main';
         $location.path('/commerce/main');
     }
@@ -174,9 +242,10 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     //Estas 2 funciones solo sirven para el link del login
     function ingresarCliente() {
         //vm.active_form = 'login';
+        scrollTo(363);
         $location.path('/commerce/login');
         vm.creaCliente = false;
-        document.getElementById("parallax").scrollTop = 636;
+        //document.getElementById("parallax").scrollTop = 636;
     }
 
     function crearCliente() {
@@ -184,16 +253,17 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         //vm.active_form = 'login';
         $location.path('/commerce/login');
         vm.creaCliente = true;
-        document.getElementById("parallax").scrollTop = 636;
+        scrollTo(636);
+        //document.getElementById("parallax").scrollTop = 636;
     }
 
-    function modificarPass(){
+    function modificarPass() {
         inicializarVariables();
 
         if (!LoginService.checkLogged()) {
 
         } else {
-            if(vm.pass_old.trim().length > 0 && vm.pass_new.trim().length > 0) {
+            if (vm.pass_old.trim().length > 0 && vm.pass_new.trim().length > 0) {
                 //if((vm.pass_old.trim().length >= 5 && vm.pass_old.trim().length <= 25)
                 //    && (vm.pass_new.trim().length >= 5 && vm.pass_new.trim().length <= 25)) {
 
@@ -203,7 +273,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
                 LoginService.changePassword(vm.cliente_id, vm.pass_old, vm.pass_new,
                     function (data) {
                         vm.change_pwd_error = '1';
-                        if(data == 1) {
+                        if (data == 1) {
                             vm.message_error = 'La contrase単a se modifico satisfactoriamente';
                         }
                         else {
@@ -245,48 +315,48 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
             vm.cliente = {};
         } else {
             vm.user_is_logged = true;
-            if(vm.cliente.apellido.trim().length > 0 && vm.cliente.nombre.trim().length > 0 && vm.cliente.mail.trim().length > 0) {
+            if (vm.cliente.apellido.trim().length > 0 && vm.cliente.nombre.trim().length > 0 && vm.cliente.mail.trim().length > 0) {
                 if (ValidateEmail(vm.cliente.mail.trim())) {
-                    LoginService.getClienteByEmail(vm.cliente.mail.trim(), function(data) {
-                         if (data.user != null) {
-                             if(vm.cliente.cliente_id == data.user.cliente_id){
-                                 //Si no encontro dentro de la db otro cliente
-                                 //con el email ingresado, actualizo los datos
-                                 LoginService.updateCliente(vm.cliente.cliente_id, vm.cliente.nombre.trim(), vm.cliente.apellido.trim(),
-                                    vm.cliente.mail.trim(), vm.cliente.direccion.trim(), function(data) {
-                                         if (data.result) {
-                                             vm.update_error = '1';
-                                             vm.message_error = 'Los datos se actualizaron satisfactoriamente';
-                                         }
-                                         else {
-                                             vm.update_error = '1';
-                                             vm.message_error = 'Error modificando los datos 1';
-                                         }
-                                     });
-                             }
-                             else {
-                                 vm.update_error = '1';
-                                 vm.message_error = 'Ya existe otro cliente con el email ingresado';
-                             }
-                         }
-                         else {
-                             //Si no encontro dentro de la db otro cliente
-                             //con el email ingresado, actualizo los datos
-                             LoginService.updateCliente(vm.cliente.cliente_id, vm.cliente.nombre.trim(), vm.cliente.apellido.trim(),
-                                 vm.cliente.mail.trim(), vm.cliente.direccion.trim(), function(data){
-                                     console.log(data.result);
-                                     console.log((data.result) ? 1 : 0);
-                                 if(data.result) {
-                                     vm.update_error = '1';
-                                     vm.message_error = 'Los datos se actualizaron satisfactoriamente';
-                                 }
-                                 else {
-                                    vm.update_error = '1';
-                                    vm.message_error = 'Error modificando los datos 2';
-                                 }
-                             });
-                         }
-                     });
+                    LoginService.getClienteByEmail(vm.cliente.mail.trim(), function (data) {
+                        if (data.user != null) {
+                            if (vm.cliente.cliente_id == data.user.cliente_id) {
+                                //Si no encontro dentro de la db otro cliente
+                                //con el email ingresado, actualizo los datos
+                                LoginService.updateCliente(vm.cliente.cliente_id, vm.cliente.nombre.trim(), vm.cliente.apellido.trim(),
+                                    vm.cliente.mail.trim(), vm.cliente.direccion.trim(), function (data) {
+                                        if (data.result) {
+                                            vm.update_error = '1';
+                                            vm.message_error = 'Los datos se actualizaron satisfactoriamente';
+                                        }
+                                        else {
+                                            vm.update_error = '1';
+                                            vm.message_error = 'Error modificando los datos 1';
+                                        }
+                                    });
+                            }
+                            else {
+                                vm.update_error = '1';
+                                vm.message_error = 'Ya existe otro cliente con el email ingresado';
+                            }
+                        }
+                        else {
+                            //Si no encontro dentro de la db otro cliente
+                            //con el email ingresado, actualizo los datos
+                            LoginService.updateCliente(vm.cliente.cliente_id, vm.cliente.nombre.trim(), vm.cliente.apellido.trim(),
+                                vm.cliente.mail.trim(), vm.cliente.direccion.trim(), function (data) {
+                                    console.log(data.result);
+                                    console.log((data.result) ? 1 : 0);
+                                    if (data.result) {
+                                        vm.update_error = '1';
+                                        vm.message_error = 'Los datos se actualizaron satisfactoriamente';
+                                    }
+                                    else {
+                                        vm.update_error = '1';
+                                        vm.message_error = 'Error modificando los datos 2';
+                                    }
+                                });
+                        }
+                    });
                 }
                 else {
                     vm.update_error = '1';
@@ -305,8 +375,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
      * @param email
      * @returns {boolean}
      */
-    function ValidateEmail(email)
-    {
+    function ValidateEmail(email) {
         var re = /\S+@\S+\.\S+/;
         return re.test(email)
     }
@@ -316,8 +385,6 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         var envio_retira = (vm.tipo == 0) ? vm.envios : vm.sucursal.nombre;
 
         var ret_comprar = acAngularCarritoServiceAcciones.comprar(envio_retira, function (data) {
-
-
 
 
             vm.compraTerminada = true;
@@ -338,7 +405,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
             }, 2000);
         });
 
-        if(ret_comprar === false){
+        if (ret_comprar === false) {
             console.log('Mensaje de Carrito Vacío');
         }
     }
@@ -354,11 +421,12 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     function nuevoCliente() {
         vm.message_error = '';
         vm.usuario_creado = 0;
-        document.getElementById("parallax").scrollTop = 636;
+        scrollTo(636);
+        //document.getElementById("parallax").scrollTop = 636;
 
-        LoginService.existeCliente(vm.mail,function(data){
+        LoginService.existeCliente(vm.mail, function (data) {
 
-            if(data == 'true'){
+            if (data == 'true') {
 
                 vm.message_error = 'El mail ya se encuentra en uso. En caso de no recordar la contraseña, solicitela a través de la página.';
                 vm.usuario_creado = -1;
@@ -366,9 +434,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
             }
 
 
-
-            if(vm.mail.trim().length > 0 && vm.mail_repeat.trim().length > 0) {
-                if(vm.mail.trim() === vm.mail_repeat.trim()) {
+            if (vm.mail.trim().length > 0 && vm.mail_repeat.trim().length > 0) {
+                if (vm.mail.trim() === vm.mail_repeat.trim()) {
                     //console.log('llamando al create');
                     LoginService.create(vm.nombre, vm.apellido, vm.mail, vm.password, vm.fecha_nacimiento,
                         vm.telefono, vm.direccion, function (data) {
@@ -408,11 +475,11 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         });
 
 
-
     }
 
     function ingresar() {
-        document.getElementById("parallax").scrollTop = 636;
+        scrollTo(636);
+        //document.getElementById("parallax").scrollTop = 636;
         LoginService.login(vm.mail.trim(), vm.password.trim(), function (data) {
             if (data[0].nombre != null && data[0].nombre.trim().length > 0) {
                 //vm.active_form = 'carrito';
@@ -448,7 +515,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
     function comprar() {
 
-        document.getElementById("parallax").scrollTop = 636;
+        scrollTo(636);
+        //document.getElementById("parallax").scrollTop = 636;
         if (!LoginService.checkLogged()) {
             //vm.active_form = 'login';
             $location.path('/commerce/login');
@@ -466,7 +534,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     function cuenta() {
         inicializarVariables();
 
-        document.getElementById("parallax").scrollTop = 636;
+        scrollTo(636);
+        //document.getElementById("parallax").scrollTop = 636;
         if (!LoginService.checkLogged()) {
             //vm.active_form = 'login';
             $location.path('/commerce/login');
@@ -476,17 +545,17 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         }
     }
 
-    function showDetailsOferta(oferta){
+    function showDetailsOferta(oferta) {
         var prod_oferta = {};
         prod_oferta["producto_id"] = -1;
         prod_oferta.precios = [];
-        var precio = {precio:0};
+        var precio = {precio: 0};
         prod_oferta.precios.push(precio);
         prod_oferta.precios[0].precio = oferta.precio;
         prod_oferta.cantidad = 1;
 
         prod_oferta.fotos = [];
-        var foto = {nombre:''};
+        var foto = {nombre: ''};
         prod_oferta.fotos.push(foto);
         prod_oferta.fotos[0].nombre = oferta.imagen;
 
@@ -506,7 +575,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         vm.detalle = detalle;
         vm.details = true;
         vm.top_before = document.getElementById("parallax").scrollTop;
-        document.getElementById("parallax").scrollTop = 636;
+        scrollTo(636);
+        //document.getElementById("parallax").scrollTop = 636;
 
         console.log(vm.detalle);
 
@@ -523,7 +593,8 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         vm.active_form = vm.active_form_before;
         vm.detalle = {};
         vm.details = false;
-        document.getElementById("parallax").scrollTop = vm.top_before;
+        scrollTo(vm.top_before);
+        //document.getElementById("parallax").scrollTop = vm.top_before;
 
         //for(var i = vm.top; i > vm.top_before; i--){
         //    console.log(i);
@@ -580,19 +651,18 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
     });
 
 
-
-    function agregarProducto(producto){
+    function agregarProducto(producto) {
 
         producto.oferta_id = -1;
         addProducto(producto);
     }
 
-    function agregarOferta(oferta){
+    function agregarOferta(oferta) {
         var prod_oferta = {};
 
         prod_oferta["producto_id"] = -1;
         prod_oferta.precios = [];
-        var precio = {precio:0};
+        var precio = {precio: 0};
         prod_oferta.precios.push(precio);
         prod_oferta.precios[0].precio = oferta.precio;
         prod_oferta.cantidad = 1;
@@ -610,7 +680,6 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
         acAngularCarritoServiceAcciones.addProducto(producto);
 
     }
-
 
 
     var container = document.getElementsByClassName('parallax');
@@ -636,6 +705,7 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
             //console.log('top: ' + window.pageYOffset);
             //console.log(document.getElementById("parallax").scrollTop);
             vm.top = document.getElementById("parallax").scrollTop;
+            //console.log(vm.top);
             //console.log('bottom: ' + (window.pageYOffset + window.innerHeight));
 
 

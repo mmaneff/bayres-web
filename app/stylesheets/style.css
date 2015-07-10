@@ -513,3 +513,213 @@ body {
   z-index: 50;
   background-color: #000000;
 }
+
+/* line 643, ../sass/style.scss */
+.lineacontornoverde {
+  border-style: Solid;
+  border-color: #81BB3F;
+  border-color: #81bb3f;
+  border-width: 1px;
+  position: relative;
+  top: 5px;
+  width: 97%;
+  height: 480px;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+/* line 659, ../sass/style.scss */
+.lineacontornoverde .contenedor-inner-contacto-mapa {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@media (min-width: 800px) {
+  /* line 659, ../sass/style.scss */
+  .lineacontornoverde .contenedor-inner-contacto-mapa {
+    flex-wrap: nowrap;
+  }
+}
+/* line 668, ../sass/style.scss */
+.lineacontornoverde .contenedor-inner-contacto-mapa .column {
+  min-width: 100%;
+}
+@media (min-width: 800px) {
+  /* line 668, ../sass/style.scss */
+  .lineacontornoverde .contenedor-inner-contacto-mapa .column {
+    min-width: 50%;
+    max-width: 50%;
+  }
+}
+
+/* line 679, ../sass/style.scss */
+.Nombre {
+  font-family: "Myriad Pro Regular";
+  position: relative;
+  font-size: 17px;
+  color: white;
+  top: 10px;
+  color: white;
+}
+
+/* line 689, ../sass/style.scss */
+.Consulta {
+  font-family: "Myriad Pro Regular";
+  position: relative;
+  font-size: 17px;
+  color: white;
+  top: 27px;
+  color: white;
+}
+
+/* line 700, ../sass/style.scss */
+.Contacto {
+  font-family: "Myriad Pro Bold Condensed";
+  font-size: 50px;
+  position: relative;
+  line-height: 55px;
+  color: #8cc63f;
+  text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.75);
+  top: 5px;
+}
+
+/* line 711, ../sass/style.scss */
+.Apellido {
+  font-family: Myriad "Myriad Pro Regular";
+  position: relative;
+  font-size: 17px;
+  margin-top: 25px;
+  color: white;
+  color: white;
+}
+
+/* line 721, ../sass/style.scss */
+.Email {
+  font-family: Myriad "Myriad Pro Regular";
+  font-size: 17px;
+  top: 15px;
+  position: relative;
+  color: white;
+  color: white;
+}
+
+/* line 730, ../sass/style.scss */
+.rectangulogrisoscuro {
+  background: #000000;
+  background: black;
+  position: relative;
+  opacity: 0.9;
+  margin: auto;
+  top: 5px;
+  width: 98%;
+  height: 98%;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  filter: alpha(opacity=90) progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+}
+
+/* line 745, ../sass/style.scss */
+.input3 {
+  background: -moz-linear-gradient(50% 102.13% 90deg, white 0%, #dedede 100%);
+  background: -webkit-linear-gradient(90deg, white 0%, #dedede 100%);
+  background: -webkit-gradient(linear, 50% 102.13%, 50% -0.71%, color-stop(0, white), color-stop(1, #dedede));
+  background: -o-linear-gradient(90deg, white 0%, #dedede 100%);
+  background: -ms-linear-gradient(90deg, white 0%, #dedede 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DEDEDE' ,GradientType=0)";
+  background: linear-gradient(0deg, #ffffff 0%, #dedede 100%);
+  position: relative;
+  font-family: Myriad Pro Regular;
+  padding-top: 2px;
+  margin: auto;
+  top: 20px;
+  width: 60%;
+  height: 19px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.48);
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=1, Color='#000000') progid:DXImageTransform.Microsoft.gradient(startColorstr='#DEDEDE',endColorstr='#FFFFFF' , GradientType=0);
+}
+
+/* line 767, ../sass/style.scss */
+.input4 {
+  background: -moz-linear-gradient(50% 102.13% 90deg, white 0%, #dedede 100%);
+  background: -webkit-linear-gradient(90deg, white 0%, #dedede 100%);
+  background: -webkit-gradient(linear, 50% 102.13%, 50% -0.71%, color-stop(0, white), color-stop(1, #dedede));
+  background: -o-linear-gradient(90deg, white 0%, #dedede 100%);
+  background: -ms-linear-gradient(90deg, white 0%, #dedede 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DEDEDE' ,GradientType=0)";
+  background: linear-gradient(0deg, #ffffff 0%, #dedede 100%);
+  margin: auto;
+  position: relative;
+  font-family: Myriad Pro Regular;
+  padding-top: 2px;
+  width: 60%;
+  top: 30px;
+  height: 180px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.48);
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=1, Color='#000000') progid:DXImageTransform.Microsoft.gradient(startColorstr='#DEDEDE',endColorstr='#FFFFFF' , GradientType=0);
+}
+
+/* line 789, ../sass/style.scss */
+.input2 {
+  background: -moz-linear-gradient(50% 102.13% 90deg, white 0%, #dedede 100%);
+  background: -webkit-linear-gradient(90deg, white 0%, #dedede 100%);
+  background: -webkit-gradient(linear, 50% 102.13%, 50% -0.71%, color-stop(0, white), color-stop(1, #dedede));
+  background: -o-linear-gradient(90deg, white 0%, #dedede 100%);
+  background: -ms-linear-gradient(90deg, white 0%, #dedede 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DEDEDE' ,GradientType=0)";
+  background: linear-gradient(0deg, #ffffff 0%, #dedede 100%);
+  position: relative;
+  margin: auto;
+  font-family: Myriad Pro Regular;
+  padding-top: 2px;
+  top: 5px;
+  width: 60%;
+  height: 19px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.48);
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=1, Color='#000000') progid:DXImageTransform.Microsoft.gradient(startColorstr='#DEDEDE',endColorstr='#FFFFFF' , GradientType=0);
+}
+
+/* line 811, ../sass/style.scss */
+.input1 {
+  background: -moz-linear-gradient(50% 102.13% 90deg, white 0%, #dedede 100%);
+  background: -webkit-linear-gradient(90deg, white 0%, #dedede 100%);
+  background: -webkit-gradient(linear, 50% 102.13%, 50% -0.71%, color-stop(0, white), color-stop(1, #dedede));
+  background: -o-linear-gradient(90deg, white 0%, #dedede 100%);
+  background: -ms-linear-gradient(90deg, white 0%, #dedede 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DEDEDE' ,GradientType=0)";
+  background: linear-gradient(0deg, #ffffff 0%, #dedede 100%);
+  position: relative;
+  margin: auto;
+  font-family: Myriad Pro Regular;
+  padding-top: 2px;
+  top: 15px;
+  width: 60%;
+  height: 19px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.48);
+  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=1, Color='#000000') progid:DXImageTransform.Microsoft.gradient(startColorstr='#DEDEDE',endColorstr='#FFFFFF' , GradientType=0);
+}
+
+/* line 833, ../sass/style.scss */
+.boton {
+  background-image: url("../img/boton-contacto.png");
+  background-repeat: no-repeat;
+  position: relative;
+  margin: auto;
+  top: 40px;
+  width: 82px;
+  height: 26px;
+}
