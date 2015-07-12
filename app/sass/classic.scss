@@ -13,49 +13,54 @@ body {
 
 #contacto-sucursal-01,
 #contacto-sucursal-02,
-#contacto-sucursal-03
-{
-//  background-color: orange;
+#contacto-sucursal-03 {
+  //  background-color: orange;
   position: absolute;
-  width: 50px;
+  width: 120px;
   height: 50px;
-  left: calc(50% - 0px);
+  left: calc(50% - 80px);
+//  background-color: orange;
 }
-
 
 #mapa-sucursal-01,
 #mapa-sucursal-02,
-#mapa-sucursal-03
-{
-//  background-color: red;
+#mapa-sucursal-03 {
+  //  background-color: red;
   position: absolute;
   width: 50px;
   height: 50px;
-  left: calc(50% - 60px);
+  left: calc(50% - 90px);
 }
 
 #contacto-sucursal-01,
-#mapa-sucursal-01
-{
+#mapa-sucursal-01 {
   top: 400px;
+  @media (min-width: 500px) {
+    top: 300px;
+    left: calc(50% - 300px);
+  }
 }
 
 #contacto-sucursal-02,
-#mapa-sucursal-02{
+#mapa-sucursal-02 {
   top: 240px;
+  @media (min-width: 500px) {
+    top: 350px;
+    left: calc(50% - 50px);
+  }
 }
 
 #contacto-sucursal-03,
-#mapa-sucursal-03{
+#mapa-sucursal-03 {
   top: 90px;
+  @media (min-width: 500px) {
+    top: 300px;
+    left: calc(50% + 250px);
+  }
 }
 
-
-
-
 #contact-detail,
-#mapa-detail
-{
+#mapa-detail {
   width: 98%;
   margin-left: 1%;
   max-width: 800px;
@@ -64,36 +69,34 @@ body {
   position: absolute;
   top: 20px;
 
-  .contenedor{
-    @media (min-width: 801px){
+  .contenedor {
+    @media (min-width: 801px) {
       min-width: 800px;
     }
 
-    @media (max-width: 800px){
+    @media (max-width: 800px) {
       min-width: 100%;
     }
   }
 
-
-
-//  background : #000000;
-//  background : rgba(0, 0, 0, 1);
-//  opacity : 0.67;
-//  border-radius : 12px;
-//  -moz-border-radius : 12px;
-//  -webkit-border-radius : 12px;
-//  filter: alpha(opacity=67) progid:DXImageTransform.Microsoft.Alpha(opacity=67) ;
+  //  background : #000000;
+  //  background : rgba(0, 0, 0, 1);
+  //  opacity : 0.67;
+  //  border-radius : 12px;
+  //  -moz-border-radius : 12px;
+  //  -webkit-border-radius : 12px;
+  //  filter: alpha(opacity=67) progid:DXImageTransform.Microsoft.Alpha(opacity=67) ;
 
 }
 
-#contact-detail.ng-leave ,
+#contact-detail.ng-leave,
 #mapa-detail.ng-leave {
   -webkit-animation: search-results-leave 1s;
   -o-animation: search-results-leave 1s;
   animation: search-results-leave 1s;
 }
 
-#contact-detail.ng-enter ,
+#contact-detail.ng-enter,
 #mapa-detail.ng-enter {
   -webkit-animation: search-results-enter 1s;
   -o-animation: search-results-enter 1s;
@@ -1055,7 +1058,8 @@ body {
 @-webkit-keyframes ofertas-container-enter {
   0% {
     //    right: -1200px;
-    transform: translate(-1500px, 0);
+//    transform: translate(-1500px, 0);
+    transform: translate(0px, -1500px);
   }
 
   100% {
@@ -1072,14 +1076,15 @@ body {
 
   100% {
     //    right: -1200px;
-    transform: translate(1500px, 0);
+//    transform: translate(1500px, 0);
+    transform: translate(0px, 1500px);
   }
 }
 
 #destacados_list, #vendidos_list, #productos_list {
   z-index: 100000;
   position: absolute;
-  width: 80%;
+  width: 100%;
   margin-left: calc(50% - 400px);
   max-width: 800px;
   min-width: 480px;
@@ -1111,7 +1116,7 @@ body {
   }
 
   @media (max-width: 800px) {
-    margin-left: 90px;
+//    margin-left: 90px;
     overflow-y: auto;
   }
 
@@ -1512,14 +1517,15 @@ body {
 }
 
 #medios {
-  background-color: #000000;
+  background-color: #FCFCFC;
   font-family: 'Myriad Pro Bold Condensed', serif;
   width: 100%;
   display: flex;
   color: #8cc63f;
-  font-size: 27px;
+  font-size: 20px;
+  white-space: nowrap;
   div:nth-child(2) {
-    min-width: 800px;
+    min-width: 600px;
   }
   div {
     margin-top: 20px;
@@ -1531,6 +1537,8 @@ body {
 
     img {
       margin-left: 15px;
+      max-width: 40px;
+      margin-bottom: 10px;
     }
   }
 
@@ -1592,6 +1600,7 @@ body {
         height: 24px;
         width: 24px;
         cursor: pointer;
+
       }
     }
 

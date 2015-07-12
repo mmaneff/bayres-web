@@ -109,9 +109,6 @@
         <div id="contacto-sucursal-03" ng-click="mainCtrl.contacto(3);"></div>
         <div id="contacto-sucursal-02" ng-click="mainCtrl.contacto(2);"></div>
         <div id="contacto-sucursal-01" ng-click="mainCtrl.contacto(1);"></div>
-        <div id="mapa-sucursal-03" ng-click="mainCtrl.mapa(3);"></div>
-        <div id="mapa-sucursal-02" ng-click="mainCtrl.mapa(2);"></div>
-        <div id="mapa-sucursal-01" ng-click="mainCtrl.mapa(1);"></div>
 
         <div id="contact-detail" ng-if="mainCtrl.active_form == 'contact';" class="outer-center">
             <div class="contenedor inner-center">
@@ -119,13 +116,11 @@
 
                     <div class="rectangulogrisoscuro">
 
-                        <P class="Contacto">CONTACTO</P>
-
-
 
                         <div class="contenedor-inner-contacto-mapa">
 
                             <div class="column">
+                                <P class="Contacto">CONTACTO</P>
                                 <P class="Nombre">Nombre:
                                 </P>
                                 <input type="text" class="input1"/>
@@ -133,56 +128,33 @@
                                 <P class="Apellido">Apellido:
                                 </P>
                                 <input type="text" class="input2"/>
-                            </div>
-                            <div class="column">
+
                                 <P class="Email">E-mail:
                                 </P>
                                 <input type="text" class="input3"/>
 
                                 <P class="Consulta">Consulta:
                                 </P>
-                                <input type="text" class="input4"/>
+                                <textarea rows="5" class="input4"></textarea>
+
+
+                                <div class="boton"></div>
+                            </div>
+                            <div class="column">
+                                <P class="Contacto">UBICACION</P>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6567.573714515767!2d-58.40511206564523!3d-34.60955085287408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaede1718eed%3A0x868d2862016aaeb1!2sCastelli+90%2C+C1031AAB+CABA!5e0!3m2!1sen!2sar!4v1436564045842"
+                                        width="80%" height="300" frameborder="0" style="border:0"
+                                        allowfullscreen></iframe>
+
+                                <p>
+
+                                </p>
 
 
                                 <div class="boton"></div>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="mapa-detail" ng-if="mainCtrl.active_form == 'mapa';"  class="outer-center">
-            <div class="contenedor inner-center">
-                <div class="lineacontornoverde">
-
-                    <div class="rectangulogrisoscuro">
-
-                        <P class="Contacto">CONTACTO</P>
-
-                        <P class="Nombre">Nombre:
-
-                        <div class="input1" contenteditable="true"></div>
-                        </P>
-
-                        <P class="Apellido">Apellido:
-
-                        <div class="input2" contenteditable="true"></div>
-                        </P>
-
-                        <P class="Email">E-mail:
-
-                        <div class="input3" contenteditable="true"></div>
-                        </P>
-
-
-                        <P class="Consulta">Consulta:
-
-                        <div class="input4" contenteditable="true"></div>
-                        </P>
-
-
-                        <div class="boton"></div>
                     </div>
                 </div>
             </div>
@@ -476,7 +448,7 @@
 
                                 </select>
                                 <select ng-if="mainCtrl.tipo == 0"
-                                        ng-model="mainCtrl.envios" name="" id="">
+                                        ng-model="mainCtrl.envios" name="" id="tipo_envio">
                                     <option value="Buenos Aires" selected>Buenos Aires</option>
                                     <option value="Interior">Interior</option>
 

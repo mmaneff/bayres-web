@@ -649,7 +649,7 @@ body {
   position : relative;
   top : 5px;
   width : 97%;
-  height : 480px;
+  height : 530px;
   margin: auto;
   text-align: center;
   border-radius : 10px;
@@ -667,6 +667,7 @@ body {
 
     .column{
       min-width: 100%;
+      min-height: 480px;
       @media (min-width: 800px) {
         min-width: 50%;
         max-width: 50%;
@@ -720,7 +721,7 @@ body {
 }
 .Email
 {
-  font-family : Myriad "Myriad Pro Regular";
+  font-family : "Myriad Pro Regular", serif;
   font-size : 17px;
   top: 15px;
   position: relative;
@@ -741,6 +742,9 @@ body {
   -moz-border-radius : 10px;
   -webkit-border-radius : 10px;
   filter: alpha(opacity=90) progid:DXImageTransform.Microsoft.Alpha(opacity=90) ;
+  @media (max-width: 800px) {
+    overflow-y: auto;
+  }
 }
 .input3
 {
@@ -752,7 +756,7 @@ body {
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DEDEDE' ,GradientType=0)";
   background : linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(222, 222, 222, 1) 100%);
   position : relative ;
-  font-family: Myriad Pro Regular;
+  font-family : "Myriad Pro Regular", serif;
   padding-top: 2px;
   margin: auto;
   top : 20px;
@@ -775,7 +779,7 @@ body {
   background : linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(222, 222, 222, 1) 100%);
   margin: auto;
   position: relative;
-  font-family: Myriad Pro Regular;
+  font-family : "Myriad Pro Regular", serif;
   padding-top: 2px;
   width: 60%;
   top:30px;
@@ -797,7 +801,7 @@ body {
   background : linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(222, 222, 222, 1) 100%);
   position : relative ;
   margin: auto;
-  font-family: Myriad Pro Regular;
+  font-family : "Myriad Pro Regular", serif;
   padding-top: 2px;
   top : 5px;
   width : 60%;
@@ -819,7 +823,7 @@ body {
   background : linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(222, 222, 222, 1) 100%);
   position : relative ;
   margin: auto;
-  font-family: Myriad Pro Regular;
+  font-family : "Myriad Pro Regular", serif;
   padding-top: 2px;
   top : 15px;
   width : 60%;
