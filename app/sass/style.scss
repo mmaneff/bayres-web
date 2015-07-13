@@ -42,6 +42,7 @@ body {
 
     .shop-menu {
       display: flex;
+
       span {
         //        line-height: 50px;
         //        height: 50px;
@@ -96,6 +97,7 @@ body {
 
         @media (max-width: 800px) {
           height: 50px;
+
 
         }
         @media (max-width: 495px) {
@@ -166,6 +168,17 @@ body {
         .detalle-compras {
           //          background-color: blue;
           //          display: inline-block;
+          display: flex;
+          flex-wrap: nowrap;
+          max-width: 90px;
+          img{
+            flex: 1;
+          }
+          span{
+            margin-top: 5px;
+            flex: 3;
+            text-align: right;
+          }
 
         }
         //        #menu-detalle-bottom{
@@ -184,9 +197,19 @@ body {
             max-width: 25px !important;
             width: 25px !important;
             #ac-angular-carrito-snipet {
-              max-width: 25px;
+              width: 100%;
+              max-width: 100px;
               div {
-                max-width: 25px !important;
+                max-width: 78px !important;
+                min-width: 78px !important;
+              }
+              span{
+                text-align: right;
+                width:90px;
+                @media (min-width: 800px) {
+                  width: 65px;
+                }
+
               }
             }
           }
@@ -330,6 +353,7 @@ body {
     height: 500px;
     width: 100%;
     position: absolute;
+    z-index: 0;
   }
 
   //  #tierra_09{background: url("../img/tierra_09.gif") 50% 0%no-repeat;}
