@@ -594,7 +594,8 @@ body {
     overflow-x: hidden;
     //    flex: 1;
     margin-top: 10px;
-    width: 420px;
+    //width: 420px;
+    max-width: 550px;
     margin-bottom: 10px;
 
     font-family: 'MyriadProLight', Tahoma;
@@ -652,21 +653,29 @@ body {
 
   @media (max-width: 600px) {
     .picture_name {
-      //width: 100px;
+      width: 100%;
       img {
+        /*
         width: 100px;
         min-height: 120px;
         margin: 10px;
+        */
+        display: block;
+        margin-left: auto;
+        margin-right: auto
       }
 
       div {
         color: #8cc63f;
         font-size: 28px;
+        margin: 0 auto;
+        /*
         text-align: center;
         position: static;
         right: 10px;
         position: absolute;
         top: 30px;
+        */
       }
     }
   }
@@ -1575,6 +1584,11 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+
+    @media (max-width: 600px) {
+      min-width: 100%;
+      text-align: center;
+    }
 
     div {
       max-width: 198px;
