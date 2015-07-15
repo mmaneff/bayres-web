@@ -116,13 +116,15 @@ body {
   overflow-y: auto !important;
   align-content: flex-start !important;
   max-width: 810px !important;
+  display: flex;
+  flex-wrap: wrap;
   @media (min-width: 800px) {
     margin-left: 0px;
     overflow-y: auto;
   }
   @media (max-width: 799px) {
 
-    //    margin-left: 90px;
+        margin-left: 0px !important;
     overflow-y: auto;
     flex-wrap: wrap !important;
     max-width: 100% !important;
