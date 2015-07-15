@@ -17,9 +17,9 @@ angular.module('myApp', [
 
 
 MainController.$inject = ['acAngularProductosService', 'acAngularCarritoServiceAcciones', '$scope', '$document',
-    'LoginService', 'acAngularSucursalesService', '$timeout', '$routeParams', '$location'];
+    'LoginService', 'acAngularSucursalesService', '$timeout', '$routeParams', '$location', '$interval'];
 function MainController(acAngularProductosService, acAngularCarritoServiceAcciones, $scope, $document,
-                        LoginService, acAngularSucursalesService, $timeout, $routeParams, $location) {
+                        LoginService, acAngularSucursalesService, $timeout, $routeParams, $location, $interval) {
     var vm = this;
     vm.ofertas = [];
     vm.destacados = [];
@@ -93,6 +93,14 @@ function MainController(acAngularProductosService, acAngularCarritoServiceAccion
 
 
     vm.scrollTo = scrollTo;
+
+
+    $interval(cambiarSlide, 10000);
+
+    function cambiarSlide(){
+        console.log('onals');
+        vm.slider_nro = (vm.slider_nro == 4)?vm.slider_nro=1:vm.slider_nro+=1;
+    }
 
 
     var pos_origin = 0;

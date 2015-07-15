@@ -1697,7 +1697,7 @@ body {
 
 @-webkit-keyframes menu-mobile-detail-enter {
   0% {
-    transform: scale(0, 1);
+    transform: scale(1, 0);
   }
 
   100% {
@@ -1711,7 +1711,7 @@ body {
   }
 
   100% {
-    transform: scale(0, 1);
+    transform: scale(1, 0);
   }
 }
 
